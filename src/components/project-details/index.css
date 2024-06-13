@@ -1,0 +1,41 @@
+.bg-tint {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: black;
+
+  transition: 0.3s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bg-tint.active {
+  opacity: 0.4;
+  pointer-events: all;
+}
+
+.project-details {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  height: 100vh;
+  width: 50vw;
+  background-color: var(--dark-bg-primary);
+
+  transform: translate(100%, 0);
+  transition: 0.3s ease-in-out;
+}
+
+.project-details.active {
+  transform: translate(0, 0);
+}
+
+.project-details .title {
+  font-size: var(--title-font-size);
+  text-transform: uppercase;
+  font-weight: 400;
+}

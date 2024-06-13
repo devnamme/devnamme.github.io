@@ -50,6 +50,9 @@ function Gallery(props) {
                 ? "thumbnail.png"
                 : WorksData[slug].thumbnail
             }`}
+            onClick={() => {
+              props.setSlug(slug);
+            }}
           />
         ))
       )}

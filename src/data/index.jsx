@@ -21,9 +21,11 @@ export const WorksData = {
     media: ["thumbnail.png", "01.png"],
   },
   "vantage-magazine": {
+    title: "Vantage Magazine",
     media: ["thumbnail.png"],
   },
   "the-guidon": {
+    title: "The GUIDON Main",
     media: ["thumbnail.png"],
   },
 };

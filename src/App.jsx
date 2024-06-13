@@ -3,9 +3,11 @@ import "./assets/css/fonts.css";
 import { Route, Routes } from "react-router-dom";
 import PrimaryNav from "./components/nav/primary";
 import SecondaryNav from "./components/nav/secondary";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import AboutSection from "./sections/about";
 import PortfolioSection from "./sections/portfolio";
+import ProjectDetails from "./components/project-details";
+import { WorksData } from "./data";
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function GeneralLayout() {
       perc * (mainRef.current.scrollWidth - window.innerWidth);
   };
 
+  const [slug, setSlug] = useState(null);
+
   useEffect(() => {
     window.removeEventListener("scroll", onScroll);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -51,7 +55,12 @@ function GeneralLayout() {
         <SecondaryNav />
 
         <AboutSection />
-        <PortfolioSection />
+        <PortfolioSection setSlug={setSlug} />
+
+        <ProjectDetails
+          setSlug={setSlug}
+          project={slug == null ? null : WorksData[slug]}
+        />
       </main>
     </>
   );

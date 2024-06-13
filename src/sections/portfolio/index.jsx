@@ -4,7 +4,7 @@ import "./index.css";
 function PortfolioSection(props) {
   return (
     <section id="portfolio">
-      <Gallery />
+      <Gallery setSlug={props.setSlug} />
 
       <div>HELLO</div>
     </section>
