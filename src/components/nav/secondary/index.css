@@ -1,0 +1,31 @@
+.secondary-nav {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 16px;
+
+  padding: var(--general-padding-y) var(--general-padding-x);
+  position: fixed;
+  /* top: var(--general-padding-y); */
+  /* right: var(--general-padding-x); */
+  top: 0;
+  right: 0;
+}
+
+.secondary-nav a {
+  text-align: right;
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 576px) {
+  .secondary-nav {
+    display: none;
+  }
+}

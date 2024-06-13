@@ -7,5 +7,68 @@ body {
 }
 
 :root {
-  --bg-color: #121212;
+  --title-font-size: 64px;
+  --link-font-size: 24px;
+
+  --body-l-font-size: 40px;
+  --body-font-size: 20px;
+
+  --dark-bg-primary: #121212;
+  --dark-bg-light: #1a1a1a;
+
+  --general-padding-x: 48px;
+  --general-padding-y: 48px;
+}
+
+body {
+  font-family: Oswald;
+  background-color: var(--dark-bg-primary);
+  color: white;
+}
+
+#root {
+  padding: var(--general-padding-y) var(--general-padding-x);
+  min-height: 100vh;
+
+  position: relative;
+}
+
+/* default */
+.link {
+  font-size: var(--link-font-size);
+
+  opacity: 0.4;
+  transition: 0.3s;
+
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* hover */
+.link:hover {
+  opacity: 0.6;
+}
+
+/* active */
+.link.active {
+  opacity: 1;
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 576px) {
+  :root {
+    --title-font-size: 40px;
+
+    --general-padding-x: 24px;
+    --general-padding-y: 24px;
+  }
 }

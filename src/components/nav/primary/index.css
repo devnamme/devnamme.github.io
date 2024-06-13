@@ -1,0 +1,51 @@
+.primary-nav {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 16px;
+
+  padding: var(--general-padding-y) var(--general-padding-x);
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* top: var(--general-padding-y); */
+  /* left: var(--general-padding-x); */
+}
+
+.primary-nav .title {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: var(--title-font-size);
+  line-height: 1;
+}
+
+.primary-nav a {
+  line-height: 1;
+}
+
+.primary-nav nav {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 24px;
+  row-gap: 0;
+}
+
+.primary-nav .secondary-nav {
+  position: static;
+  padding: 0;
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 576px) {
+  .primary-nav .secondary-nav {
+    display: flex;
+  }
+}

@@ -1,0 +1,23 @@
+/* default */
+.expanding-link {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 6px;
+}
+
+.expanding-link .right {
+  max-width: 0;
+  overflow-x: clip;
+
+  transition: 0.3s;
+}
+
+/* hover */
+.expanding-link:hover .right {
+  max-width: 300px;
+}
+
+/* active */
+.expanding-link.active .right {
+  max-width: 300px;
+}
