@@ -1,5 +1,11 @@
 #about {
   width: 100vw;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
 #about .title {
@@ -11,5 +17,7 @@
 
 #about .text {
   font-size: var(--body-l-font-size);
+  font-weight: 300;
   text-align: center;
+  max-width: 640px;
 }

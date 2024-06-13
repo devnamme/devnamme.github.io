@@ -26,14 +26,23 @@ function App() {
 
 function GeneralLayout() {
   const mainRef = useRef(null);
+  const sectionRefs = useRef({
+    "/": null,
+    "/works/web": null,
+    "/works/mobile": null,
+    "/works/game": null,
+    "/produced/articles": null,
+    "/produced/videos": null,
+    "/produced/issues": null,
+    "/awards": null,
+    "/experiences": null,
+  });
 
   const onScroll = (event) => {
     let bcr = document.body.getBoundingClientRect();
     let top = bcr.top;
     let oh = bcr.height - window.innerHeight;
     let perc = (top / oh) * -1;
-
-    // console.log(perc, mainRef.current.scrollWidth);
 
     mainRef.current.scrollLeft =
       perc * (mainRef.current.scrollWidth - window.innerWidth);
@@ -50,8 +59,6 @@ function GeneralLayout() {
       <main ref={mainRef}>
         <PrimaryNav />
         <SecondaryNav />
-        <AboutSection />
-        <AboutSection />
         <AboutSection />
       </main>
     </>
