@@ -1,0 +1,18 @@
+.gallery {
+  height: 100%;
+  height: 100px;
+
+  height: 45vh;
+
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 24px;
+}
+
+.gallery .thumbnail {
+  height: 100%;
+  width: auto;
+  display: block;
+
+  cursor: pointer;
+}

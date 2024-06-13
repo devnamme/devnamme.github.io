@@ -38,7 +38,7 @@
   column-gap: 24px;
   row-gap: 0;
 
-  max-height: var(--title-font-size);
+  max-height: calc(2 * var(--title-font-size));
   overflow: clip;
   transition: 0.5s ease-in-out;
 }

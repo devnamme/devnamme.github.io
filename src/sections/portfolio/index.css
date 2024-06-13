@@ -1,0 +1,7 @@
+#portfolio {
+  /* height: calc(100% - 144px); */
+
+  display: grid;
+  grid-template-rows: 1fr 80px;
+  row-gap: 56px;
+}

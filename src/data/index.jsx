@@ -18,12 +18,18 @@ export const WorksData = {
     ],
     tech: ["Headless WordPress", "ReactJS"],
     content: "",
-    media: [],
+    media: ["thumbnail.png", "01.png"],
+  },
+  "vantage-magazine": {
+    media: ["thumbnail.png"],
+  },
+  "the-guidon": {
+    media: ["thumbnail.png"],
   },
 };
 
 export const WorksDataGroups = {
-  web: ["the-guidon-archives"],
+  web: ["the-guidon-archives", "vantage-magazine", "the-guidon"],
   mobile: [],
   game: [],
 };
