@@ -13,6 +13,7 @@
 
 .secondary-nav a {
   text-align: right;
+  line-height: 1;
 }
 
 @media screen and (max-width: 1200px) {
