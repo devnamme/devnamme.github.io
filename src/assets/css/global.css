@@ -7,6 +7,7 @@ body {
 }
 
 :root {
+  --title-l-font-size: 100px;
   --title-font-size: 64px;
   --link-font-size: 24px;
 
@@ -24,13 +25,46 @@ body {
   font-family: Oswald;
   background-color: var(--dark-bg-primary);
   color: white;
+
+  -ms-overflow-style: none;
+  /* scrollbar-width: none; */
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 #root {
-  padding: var(--general-padding-y) var(--general-padding-x);
-  min-height: 100vh;
+  /* padding: var(--general-padding-y) var(--general-padding-x); */
+  min-height: 500vh;
 
   position: relative;
+}
+
+main {
+  /* min-width: 100vw; */
+  height: 100vh;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  padding: var(--general-padding-y) 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+main::-webkit-scrollbar {
+  display: none;
+}
+
+main > * {
+  flex-shrink: 0;
 }
 
 /* default */

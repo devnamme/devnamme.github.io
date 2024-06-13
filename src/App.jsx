@@ -1,37 +1,59 @@
 import "./assets/css/global.css";
 import "./assets/css/fonts.css";
-import HomePage from "./pages/home";
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import PrimaryNav from "./components/nav/primary";
 import SecondaryNav from "./components/nav/secondary";
+import { useEffect, useRef } from "react";
+import AboutSection from "./sections/about";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={GeneralLayout()}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/works/:slug?" element={<HomePage />} />
-          <Route path="/produced/:slug?" element={<HomePage />} />
-          <Route path="/awards" element={<HomePage />} />
-          <Route path="/experiences" element={<HomePage />} />
-          <Route
-            path="/project/:slug"
-            element={<HomePage hasActiveProject={true} />}
-          />
-          <Route path="*" element={<HomePage />} />
-        </Route>
+        <Route path="*" element={GeneralLayout()} />
+        {/* <Route path="/" />
+          <Route path="/works/:slug?" />
+          <Route path="/produced/:slug?" />
+          <Route path="/awards" />
+          <Route path="/experiences" />
+          <Route path="/project/:slug" element={null} />
+          <Route path="*" />
+        </Route>*/}
       </Routes>
     </>
   );
 }
 
 function GeneralLayout() {
+  const mainRef = useRef(null);
+
+  const onScroll = (event) => {
+    let bcr = document.body.getBoundingClientRect();
+    let top = bcr.top;
+    let oh = bcr.height - window.innerHeight;
+    let perc = (top / oh) * -1;
+
+    // console.log(perc, mainRef.current.scrollWidth);
+
+    mainRef.current.scrollLeft =
+      perc * (mainRef.current.scrollWidth - window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
-      <PrimaryNav />
-      <SecondaryNav />
-      <Outlet />
+      <main ref={mainRef}>
+        <PrimaryNav />
+        <SecondaryNav />
+        <AboutSection />
+        <AboutSection />
+        <AboutSection />
+      </main>
     </>
   );
 }

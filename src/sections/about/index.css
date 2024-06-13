@@ -1,0 +1,15 @@
+#about {
+  width: 100vw;
+}
+
+#about .title {
+  font-size: var(--title-l-font-size);
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#about .text {
+  font-size: var(--body-l-font-size);
+  text-align: center;
+}
