@@ -21,10 +21,19 @@ function ProjectDetails(props) {
       >
         {activeProject != null && (
           <>
-            <div className="media"></div>
+            <div className="media">
+              <img
+                src={`/media/${activeProject.slug}/${
+                  activeProject.thumbnail == null
+                    ? "thumbnail.png"
+                    : activeProject.thumbnail
+                }`}
+              />
+            </div>
+
             <div className="metadata">
               <div
-                className="back-group"
+                className="back-group link"
                 onClick={() => {
                   props.setSlug(null);
                 }}

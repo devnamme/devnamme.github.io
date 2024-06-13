@@ -6,7 +6,7 @@ function PortfolioSection(props) {
     <section id="portfolio">
       <Gallery setSlug={props.setSlug} />
 
-      <div>HELLO</div>
+      <div></div>
     </section>
   );
 }

@@ -5,6 +5,7 @@ export const Labels = {
 
 export const WorksData = {
   "the-guidon-archives": {
+    slug: "the-guidon-archives",
     title: "The GUIDON Archives",
     tech: ["Headless WordPress", "ReactJS"],
     links: [
@@ -42,6 +43,7 @@ export const WorksData = {
     media: ["thumbnail.png", "01.png"],
   },
   "vantage-magazine": {
+    slug: "vantage-magazine",
     title: "Vantage Magazine",
     tech: ["WordPress", "PHP"],
     links: [
@@ -57,6 +59,7 @@ export const WorksData = {
     media: ["thumbnail.png"],
   },
   "the-guidon": {
+    slug: "the-guidon",
     title: "The GUIDON Main",
     tech: ["WordPress", "PHP"],
     links: [
