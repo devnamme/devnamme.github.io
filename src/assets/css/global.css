@@ -19,6 +19,9 @@ body {
 
   --general-padding-x: 48px;
   --general-padding-y: 48px;
+
+  --links-col-gap: 24px;
+  --links-row-gap: 4px;
 }
 
 body {
@@ -77,6 +80,7 @@ main > * {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
+  line-height: 1;
 }
 
 /* hover */

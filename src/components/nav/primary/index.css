@@ -28,15 +28,11 @@
   opacity: 0;
 }
 
-.primary-nav a {
-  line-height: 1;
-}
-
 .primary-nav nav {
   display: flex;
   flex-flow: row wrap;
-  column-gap: 24px;
-  row-gap: 0;
+  column-gap: var(--links-col-gap);
+  row-gap: var(--links-row-gap);
 
   max-height: calc(2 * var(--title-font-size));
   overflow: clip;

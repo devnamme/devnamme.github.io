@@ -29,6 +29,7 @@ function App() {
 
 function GeneralLayout() {
   const mainRef = useRef(null);
+  const [slug, setSlug] = useState(null);
 
   const onScroll = (event) => {
     let bcr = document.body.getBoundingClientRect();
@@ -40,11 +41,9 @@ function GeneralLayout() {
       perc * (mainRef.current.scrollWidth - window.innerWidth);
   };
 
-  const [slug, setSlug] = useState(null);
-
   useEffect(() => {
     window.removeEventListener("scroll", onScroll);
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 

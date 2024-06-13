@@ -6,6 +6,7 @@ export const Labels = {
 export const WorksData = {
   "the-guidon-archives": {
     title: "The GUIDON Archives",
+    tech: ["Headless WordPress", "ReactJS"],
     links: [
       {
         text: Labels.website,
@@ -16,16 +17,58 @@ export const WorksData = {
         url: "https://github.com/theguidon/theguidon-archives",
       },
     ],
-    tech: ["Headless WordPress", "ReactJS"],
-    content: "",
+    content: (
+      <>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores
+          harum reiciendis nisi esse quod animi exercitationem minus quasi.
+          Natus voluptas consequuntur molestiae? Enim magni fugit blanditiis
+          corrupti dignissimos rerum consequatur.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores
+          harum reiciendis nisi esse quod animi exercitationem minus quasi.
+          Natus voluptas consequuntur molestiae? Enim magni fugit blanditiis
+          corrupti dignissimos rerum consequatur.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores
+          harum reiciendis nisi esse quod animi exercitationem minus quasi.
+          Natus voluptas consequuntur molestiae? Enim magni fugit blanditiis
+          corrupti dignissimos rerum consequatur.
+        </p>
+      </>
+    ),
     media: ["thumbnail.png", "01.png"],
   },
   "vantage-magazine": {
     title: "Vantage Magazine",
+    tech: ["WordPress", "PHP"],
+    links: [
+      {
+        text: Labels.website,
+        url: "https://vantage.theguidon.com",
+      },
+      {
+        text: Labels.github,
+        url: "https://github.com/theguidon/vantmag-revamp-2022",
+      },
+    ],
     media: ["thumbnail.png"],
   },
   "the-guidon": {
     title: "The GUIDON Main",
+    tech: ["WordPress", "PHP"],
+    links: [
+      {
+        text: Labels.website,
+        url: "https://theguidon.com",
+      },
+      {
+        text: Labels.github,
+        url: "https://github.com/theguidon/gdn-main-2022",
+      },
+    ],
     media: ["thumbnail.png"],
   },
 };
