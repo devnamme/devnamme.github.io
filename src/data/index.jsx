@@ -69,7 +69,11 @@ export const WorksData = {
     media: ["thumbnail.png"],
     content: (
       <>
-        <p>Hello world</p>
+        <p>
+          A complete redesign of the Vantage Magazine website in time for its
+          10th year anniversary in June 2024. The entire website was developed
+          in less than 1 week.
+        </p>
       </>
     ),
   },
@@ -85,7 +89,13 @@ export const WorksData = {
     media: ["thumbnail.png"],
     content: (
       <>
-        <p>Hello world</p>
+        <p>
+          A complete redesign of The GUIDON Interactive, the homepage of all
+          interactive and immersive articles of the publication. The launch of
+          the newly developed website prompted the reform of internal processes,
+          with the usage of Google Sheets as the primary makeshift database
+          being retired and a new Headless CMS being created for scalability.
+        </p>
       </>
     ),
   },
@@ -105,7 +115,7 @@ export const WorksData = {
     media: ["thumbnail.png"],
     content: (
       <>
-        <p>Hello world</p>
+        <p>A complete redesign of the main website of The GUIDON.</p>
       </>
     ),
   },
@@ -138,11 +148,15 @@ export const WorksData = {
   },
   "year-end-gallery-2023": {
     title: "Year-End Gallery 2023",
-    tech: [],
+    tech: ["ReactJS"],
     links: [
       {
         text: Labels.website,
         url: "https://interactive.theguidon.com/2023/05/year-end-gallery/",
+      },
+      {
+        text: Labels.github,
+        url: "https://github.com/theguidon/year-end-gallery-2023",
       },
     ],
     media: ["thumbnail.png"],
@@ -154,17 +168,24 @@ export const WorksData = {
   },
   "dead-end": {
     title: "Dead End: The Commuter Experience",
-    tech: [],
+    tech: ["ReactJS"],
     links: [
       {
         text: Labels.website,
         url: "https://interactive.theguidon.com/2023/05/dead-end/",
       },
+      {
+        text: Labels.github,
+        url: "https://github.com/theguidon/dead-end-2023",
+      },
     ],
     media: ["thumbnail.png"],
     content: (
       <>
-        <p>Hello world</p>
+        <p>
+          Dead End is an interactive article that features the hardships of
+          Filipino commuters in their day to day lives.
+        </p>
       </>
     ),
   },
@@ -186,11 +207,15 @@ export const WorksData = {
   },
   "a-house-divided": {
     title: "A House Divided",
-    tech: [],
+    tech: ["VueJS"],
     links: [
       {
         text: Labels.website,
         url: "https://interactive.theguidon.com/2022/10/a-house-divided/",
+      },
+      {
+        text: Labels.github,
+        url: "https://github.com/theguidon/a-house-divided",
       },
     ],
     media: ["thumbnail.png"],
@@ -207,7 +232,11 @@ export const WorksData = {
     media: ["thumbnail.png"],
     content: (
       <>
-        <p>Hello world</p>
+        <p>
+          A proof-of-concept web application that efficiently calculates
+          flooding risks and its related heatmaps for the Local Government Unit
+          (LGU) of Calbayog, Samar in the Philippines.
+        </p>
       </>
     ),
   },
