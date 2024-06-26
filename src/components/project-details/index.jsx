@@ -1,14 +1,41 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./index.css";
 
 function ProjectDetails(props) {
   const [activeSlug, setActiveSlug] = useState(null);
   const [activeProject, setActiveProject] = useState(null);
 
+  const scrollContainerRef = useRef(null);
+  const [mediaPage, setMediaPage] = useState(2);
+
   useEffect(() => {
     if (props.slug != null) setActiveSlug(props.slug);
-    if (props.project != null) setActiveProject(props.project);
+    if (props.project != null) {
+      setActiveProject(props.project);
+      setMediaPage(1);
+    }
   }, [props.slug, props.project]);
+
+  const calculateMediaPage = (x, bcr) => {
+    let perc = (x - bcr.left) / bcr.width;
+    let val = Math.floor(perc / (1 / activeProject.media.length)) + 1;
+
+    if (val <= 1) val = 1;
+    if (val >= activeProject.media.length) val = activeProject.media.length;
+
+    return val;
+  };
+
+  const handleScrollClick = (event) => {
+    setMediaPage(
+      calculateMediaPage(
+        event.clientX,
+        scrollContainerRef.current.getBoundingClientRect()
+      )
+    );
+  };
+
+  const onScrollDrag = (event) => {};
 
   return (
     <>
@@ -32,6 +59,24 @@ function ProjectDetails(props) {
                       : activeProject.thumbnail
                   }`}
                 />
+
+                {activeProject.media.length > 1 && (
+                  <div
+                    className="scroll-container"
+                    ref={scrollContainerRef}
+                    onClick={handleScrollClick}
+                  >
+                    <div
+                      className="scroll-fill"
+                      style={{
+                        width: `${(1 / activeProject.media.length) * 100}%`,
+                        marginLeft: `${
+                          ((mediaPage - 1) / activeProject.media.length) * 100
+                        }%`,
+                      }}
+                    />
+                  </div>
+                )}
               </div>
             )}
 
