@@ -57,10 +57,10 @@
 }
 
 @media screen and (max-width: 768px) {
-}
-
-@media screen and (max-width: 576px) {
   .primary-nav .secondary-nav {
     display: flex;
   }
+}
+
+@media screen and (max-width: 576px) {
 }

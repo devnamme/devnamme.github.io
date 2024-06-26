@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import "./index.css";
 
 function ProjectDetails(props) {
+  const [activeSlug, setActiveSlug] = useState(null);
   const [activeProject, setActiveProject] = useState(null);
 
   useEffect(() => {
+    if (props.slug != null) setActiveSlug(props.slug);
     if (props.project != null) setActiveProject(props.project);
-  }, [props.project]);
+  }, [props.slug, props.project]);
 
   return (
     <>
@@ -21,15 +23,17 @@ function ProjectDetails(props) {
       >
         {activeProject != null && (
           <>
-            <div className="media">
-              <img
-                src={`/media/${activeProject.slug}/${
-                  activeProject.thumbnail == null
-                    ? "thumbnail.png"
-                    : activeProject.thumbnail
-                }`}
-              />
-            </div>
+            {activeProject.media != null && activeProject.media.length > 0 && (
+              <div className="media">
+                <img
+                  src={`/media/${activeSlug}/${
+                    activeProject.thumbnail == null
+                      ? "thumbnail.png"
+                      : activeProject.thumbnail
+                  }`}
+                />
+              </div>
+            )}
 
             <div className="metadata">
               <div
@@ -49,25 +53,38 @@ function ProjectDetails(props) {
                 <p>Back</p>
               </div>
 
-              <h2 className="title">{activeProject.title}</h2>
-              <div className="tech">
-                {activeProject.tech.map((tech, idx) => (
-                  <p key={`project-tech-${idx}`}>{tech}</p>
-                ))}
-              </div>
-              <div className="links">
-                {activeProject.links.map((link, idx) => (
-                  <a
-                    key={`project-link-${idx}`}
-                    className="link"
-                    href={link.url}
-                  >
-                    {link.text} //
-                  </a>
-                ))}
+              <div className="info">
+                <h2 className="title">{activeProject.title}</h2>
+
+                {activeProject.tech != null &&
+                  activeProject.tech.length > 0 && (
+                    <div className="tech">
+                      {activeProject.tech.map((tech, idx) => (
+                        <p key={`project-tech-${idx}`}>{tech}</p>
+                      ))}
+                    </div>
+                  )}
+
+                {activeProject.links != null &&
+                  activeProject.links.length > 0 && (
+                    <div className="links">
+                      {activeProject.links.map((link, idx) => (
+                        <a
+                          key={`project-link-${idx}`}
+                          className="link"
+                          href={link.url}
+                          target="_blank"
+                        >
+                          {link.text} //
+                        </a>
+                      ))}
+                    </div>
+                  )}
               </div>
 
-              <div className="content">{activeProject.content}</div>
+              {activeProject.content != null && (
+                <div className="content">{activeProject.content}</div>
+              )}
             </div>
           </>
         )}

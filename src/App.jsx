@@ -58,6 +58,7 @@ function GeneralLayout() {
 
         <ProjectDetails
           setSlug={setSlug}
+          slug={slug}
           project={slug == null ? null : WorksData[slug]}
         />
       </main>

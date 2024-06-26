@@ -5,9 +5,8 @@ export const Labels = {
 
 export const WorksData = {
   "the-guidon-archives": {
-    slug: "the-guidon-archives",
     title: "The GUIDON Archives",
-    tech: ["Headless WordPress", "ReactJS"],
+    tech: ["Headless WordPress", "PHP", "Vite", "ReactJS"],
     links: [
       {
         text: Labels.website,
@@ -18,32 +17,43 @@ export const WorksData = {
         url: "https://github.com/theguidon/theguidon-archives",
       },
     ],
+    media: [
+      "thumbnail.png",
+      "01.png",
+      "02.png",
+      "03.png",
+      "04.png",
+      "05.png",
+      "06.png",
+      "07.png",
+      "08.png",
+      "09.png",
+      "10.png",
+    ],
     content: (
       <>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores
-          harum reiciendis nisi esse quod animi exercitationem minus quasi.
-          Natus voluptas consequuntur molestiae? Enim magni fugit blanditiis
-          corrupti dignissimos rerum consequatur.
+          Heavily inspired by{" "}
+          <a href="https://timesmachine.nytimes.com/" target="_blank">
+            TimesMachine
+          </a>{" "}
+          by New York Times, The Digital Archives is the publication's very own
+          initiative to digitize and compile all of its published issues (since
+          1929) in a singular website available for everyone. This is done in
+          partnership with Ateneo's office for archival (University Archives)
+          and marks history for the publication as the first student publication
+          in the country with a large-scale initiative.
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores
-          harum reiciendis nisi esse quod animi exercitationem minus quasi.
-          Natus voluptas consequuntur molestiae? Enim magni fugit blanditiis
-          corrupti dignissimos rerum consequatur.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores
-          harum reiciendis nisi esse quod animi exercitationem minus quasi.
-          Natus voluptas consequuntur molestiae? Enim magni fugit blanditiis
-          corrupti dignissimos rerum consequatur.
+          As the original proponent, project manager, and sole developer for the
+          Digital Archives, I formally launched the Digital Archives in the
+          publication's 95th anniversary celebration in front of notable alumni
+          and prominent people in the field of journalism and politics.
         </p>
       </>
     ),
-    media: ["thumbnail.png", "01.png"],
   },
   "vantage-magazine": {
-    slug: "vantage-magazine",
     title: "Vantage Magazine",
     tech: ["WordPress", "PHP"],
     links: [
@@ -57,9 +67,29 @@ export const WorksData = {
       },
     ],
     media: ["thumbnail.png"],
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
+  },
+  "the-guidon-interactive": {
+    title: "The GUIDON Interactive",
+    tech: ["Headless WordPress", "PHP", "Vite", "ReactJS"],
+    links: [
+      {
+        text: Labels.website,
+        url: "https://interactive.theguidon.com",
+      },
+    ],
+    media: ["thumbnail.png"],
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
   },
   "the-guidon": {
-    slug: "the-guidon",
     title: "The GUIDON Main",
     tech: ["WordPress", "PHP"],
     links: [
@@ -73,12 +103,142 @@ export const WorksData = {
       },
     ],
     media: ["thumbnail.png"],
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
+  },
+  "talab-2023": {
+    title: "TALAB 2023",
+    tech: ["Django", "HTML", "CSS"],
+    links: [],
+    media: ["thumbnail.png"],
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
+  },
+  epimetrics: {
+    title: "EpiMetrics, Inc.",
+    tech: ["WordPress", "PHP"],
+    links: [
+      {
+        text: Labels.website,
+        url: "https://epimetrics.com.ph",
+      },
+    ],
+    media: ["thumbnail.png"],
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
+  },
+  "year-end-gallery-2023": {
+    title: "Year-End Gallery 2023",
+    tech: [],
+    links: [
+      {
+        text: Labels.website,
+        url: "https://interactive.theguidon.com/2023/05/year-end-gallery/",
+      },
+    ],
+    media: ["thumbnail.png"],
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
+  },
+  "dead-end": {
+    title: "Dead End: The Commuter Experience",
+    tech: [],
+    links: [
+      {
+        text: Labels.website,
+        url: "https://interactive.theguidon.com/2023/05/dead-end/",
+      },
+    ],
+    media: ["thumbnail.png"],
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
+  },
+  "uaap-85-primer-1": {
+    title: "UAAP Season 85 Primer Volume 1",
+    tech: ["WordPress", "PHP", "HTML", "CSS"],
+    links: [
+      {
+        text: Labels.website,
+        url: "https://theguidon.com/uaap-85-primer-volume-1/",
+      },
+    ],
+    media: ["thumbnail.png"],
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
+  },
+  "a-house-divided": {
+    title: "A House Divided",
+    tech: [],
+    links: [
+      {
+        text: Labels.website,
+        url: "https://interactive.theguidon.com/2022/10/a-house-divided/",
+      },
+    ],
+    media: ["thumbnail.png"],
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
+  },
+  "flood-guard-calbayog": {
+    title: "Flood Guard Calbayog",
+    tech: ["Ruby on Rails", "MySQL", "ReactJS"],
+    links: [],
+    media: ["thumbnail.png"],
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
+  },
+  beadle: {
+    title: "Beadle: AdMU Student App",
+    tech: ["Flutter", "Dart"],
+    links: [],
+    media: ["thumbnail.png"],
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
   },
 };
 
 export const WorksDataGroups = {
-  web: ["the-guidon-archives", "vantage-magazine", "the-guidon"],
-  mobile: [],
+  web: [
+    "the-guidon-archives",
+    "vantage-magazine",
+    "the-guidon-interactive",
+    "the-guidon",
+    "talab-2023",
+    "epimetrics",
+    "year-end-gallery-2023",
+    "dead-end",
+    "uaap-85-primer-1",
+    "a-house-divided",
+    "flood-guard-calbayog",
+  ],
+  mobile: ["beadle"],
   game: [],
 };
 
