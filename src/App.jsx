@@ -1,6 +1,12 @@
 import "./assets/css/global.css";
 import "./assets/css/fonts.css";
-import { Route, Routes } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import PrimaryNav from "./components/nav/primary";
 import SecondaryNav from "./components/nav/secondary";
 import { useEffect, useRef, useState } from "react";
@@ -14,14 +20,6 @@ function App() {
     <>
       <Routes>
         <Route path="*" element={GeneralLayout()} />
-        {/* <Route path="/" />
-          <Route path="/works/:slug?" />
-          <Route path="/produced/:slug?" />
-          <Route path="/awards" />
-          <Route path="/experiences" />
-          <Route path="/project/:slug" element={null} />
-          <Route path="*" />
-        </Route>*/}
       </Routes>
     </>
   );
@@ -31,6 +29,13 @@ function GeneralLayout() {
   const mainRef = useRef(null);
   const [slug, setSlug] = useState(null);
 
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  /**
+   * Handler for horizontal scrolling
+   * @param {Event} event Event object
+   */
   const onScroll = (event) => {
     let bcr = document.body.getBoundingClientRect();
     let top = bcr.top;
@@ -46,6 +51,28 @@ function GeneralLayout() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    /**
+     * Checks if the project slug is valid or not
+     */
+    if (pathname.startsWith("/project")) {
+      let foo = pathname.split("/")[2];
+      if (WorksData[foo] != null) setSlug(foo);
+      else navigate("/");
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    /**
+     * Disables/enables scrolling depending on slug
+     */
+    if (slug != null) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [slug]);
 
   return (
     <>

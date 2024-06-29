@@ -37,6 +37,11 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+body.no-scroll {
+  height: 100vh;
+  overflow-y: clip;
+}
+
 #root {
   /* padding: var(--general-padding-y) var(--general-padding-x); */
   min-height: 500vh;

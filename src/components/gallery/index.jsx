@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { WorksData, WorksDataGroups } from "../../data";
 import "./index.css";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function Gallery(props) {
   const navigate = useNavigate();
@@ -39,21 +39,22 @@ function Gallery(props) {
     <div className="gallery" ref={galleryRef}>
       {Object.keys(WorksDataGroups).map((key, i) =>
         WorksDataGroups[key].map((slug, j) => (
-          <img
-            key={`gallery-${key}-${slug}`}
-            ref={(el) => {
-              if (j == 0) refs.current[i] = el;
-            }}
-            className="thumbnail"
-            src={`/media/${slug}/${
-              WorksData[slug].thumbnail == null
-                ? "thumbnail.png"
-                : WorksData[slug].thumbnail
-            }`}
-            onClick={() => {
-              props.setSlug(slug);
-            }}
-          />
+          <Link to={`/project/${slug}`} key={`gallery-${key}-${slug}`}>
+            <img
+              ref={(el) => {
+                if (j == 0) refs.current[i] = el;
+              }}
+              className="thumbnail"
+              src={`/media/${slug}/${
+                WorksData[slug].thumbnail == null
+                  ? "thumbnail.png"
+                  : WorksData[slug].thumbnail
+              }`}
+              onClick={() => {
+                props.setSlug(slug);
+              }}
+            />
+          </Link>
         ))
       )}
     </div>

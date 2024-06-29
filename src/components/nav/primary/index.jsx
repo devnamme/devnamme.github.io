@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 function PrimaryNav() {
   const { pathname } = useLocation();
 
-  const [lastPath, setLastPath] = useState("");
+  const [activePath, setActivePath] = useState("");
 
   const primaryLinks = [
     ["/", "About"],
@@ -18,7 +18,6 @@ function PrimaryNav() {
   ];
 
   const secondaryLinks = {
-    "": [],
     works: [
       ["/works/web", "Web"],
       ["/works/mobile", "Mobile"],
@@ -29,13 +28,12 @@ function PrimaryNav() {
       ["/produced/videos", "Videos"],
       ["/produced/issues", "Issues"],
     ],
-    awards: [],
-    experiences: [],
   };
 
   useEffect(() => {
     let first = pathname.split("/")[1];
-    if (secondaryLinks[first].length > 0) setLastPath(first);
+    if (secondaryLinks[first] != null && secondaryLinks[first].length > 0)
+      setActivePath(first);
   }, [pathname]);
 
   return (
@@ -65,8 +63,8 @@ function PrimaryNav() {
             : ""
         }
       >
-        {secondaryLinks[lastPath] != null &&
-          secondaryLinks[lastPath].map((link, idx) => (
+        {secondaryLinks[activePath] != null &&
+          secondaryLinks[activePath].map((link, idx) => (
             <ExpandingLink
               key={`nav-secondary-${idx}`}
               path={link[0]}
