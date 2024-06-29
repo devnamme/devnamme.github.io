@@ -37,18 +37,29 @@ export const WorksData = {
           <a href="https://timesmachine.nytimes.com/" target="_blank">
             TimesMachine
           </a>{" "}
-          by New York Times, The Digital Archives is the publication's very own
-          initiative to digitize and compile all of its published issues (since
-          1929) in a singular website available for everyone. This is done in
-          partnership with Ateneo's office for archival (University Archives)
-          and marks history for the publication as the first student publication
-          in the country with a large-scale initiative.
+          of the New York Times, the Digital Archives is the publication's very
+          own initiative to digitize and compile all of its published issues
+          (since 1929) in a singular website available for everyone. This is
+          done in partnership with Ateneo de Manila University's office for
+          archival (University Archives), marking history as the publication
+          becomes the first student publication in the country with such a
+          large-scale initiative.
         </p>
         <p>
-          As the original proponent, project manager, and sole developer for the
-          Digital Archives, I formally launched the Digital Archives in the
-          publication's 95th anniversary celebration in front of notable alumni
-          and prominent people in the field of journalism and politics.
+          The project was originally proposed in late 2022 with the development
+          taking place from May 2024 to mid-June 2024. It was formally launched
+          during the publication's 95th anniversary milestone celebration in
+          front of alumni and prominent people in the fields of journalism and
+          politics.
+        </p>
+        <p>
+          I was the sole proponent and the only developer for the entire
+          project. Headless WordPress was used as the primary content management
+          system (CMS) and the data was exposed via custom-made REST API
+          endpoints. Such endpoints were also created so that parts of the
+          Digital Archives can be integrated into other websites or tools of the
+          publication. Eventually, these may also be used when the publication's
+          future mobile application is launched.
         </p>
       </>
     ),
