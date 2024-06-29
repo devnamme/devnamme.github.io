@@ -38,9 +38,7 @@ function GeneralLayout() {
    */
   const onScroll = (event) => {
     let bcr = document.body.getBoundingClientRect();
-    let top = bcr.top;
-    let oh = bcr.height - window.innerHeight;
-    let perc = (top / oh) * -1;
+    let perc = (bcr.top / (bcr.height - window.innerHeight)) * -1;
 
     mainRef.current.scrollLeft =
       perc * (mainRef.current.scrollWidth - window.innerWidth);
@@ -71,6 +69,25 @@ function GeneralLayout() {
       document.body.classList.add("no-scroll");
     } else {
       document.body.classList.remove("no-scroll");
+    }
+
+    let thumbnail = document.getElementById(slug);
+    if (thumbnail != null && mainRef.current != null) {
+      let left =
+        thumbnail.offsetLeft -
+        (window.innerWidth - thumbnail.getBoundingClientRect().width) / 2;
+
+      mainRef.current.scrollTo({
+        left: left,
+        behavior: "smooth",
+      });
+
+      let perc = left / (mainRef.current.scrollWidth - window.innerWidth);
+
+      window.scrollTo({
+        top: perc * (document.body.scrollHeight - window.innerHeight),
+        behavior: "smooth",
+      });
     }
   }, [slug]);
 

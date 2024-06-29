@@ -39,7 +39,11 @@ function Gallery(props) {
     <div className="gallery" ref={galleryRef}>
       {Object.keys(WorksDataGroups).map((key, i) =>
         WorksDataGroups[key].map((slug, j) => (
-          <Link to={`/project/${slug}`} key={`gallery-${key}-${slug}`}>
+          <Link
+            to={`/project/${slug}`}
+            key={`gallery-${key}-${slug}`}
+            id={slug}
+          >
             <img
               ref={(el) => {
                 if (j == 0) refs.current[i] = el;
