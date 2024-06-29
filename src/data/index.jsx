@@ -278,7 +278,9 @@ export const WorksDataGroups = {
     "a-house-divided",
     "flood-guard-calbayog",
   ],
-  mobile: ["beadle"],
+  mobile: [
+    // "beadle"
+  ],
   game: [],
 };
 
