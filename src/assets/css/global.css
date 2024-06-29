@@ -61,13 +61,7 @@ main {
   flex-flow: row nowrap;
   align-items: flex-end;
 
-  overflow-x: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-main::-webkit-scrollbar {
-  display: none;
+  overflow-x: hidden;
 }
 
 main > * {
