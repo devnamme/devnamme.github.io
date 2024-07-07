@@ -12,8 +12,7 @@ function PrimaryNav() {
 
   useEffect(() => {
     let first = pathname.split("/")[1];
-    if (RouteHierarchy[first] != null && RouteHierarchy[first].sub != null)
-      setActivePath(first);
+    if (RouteHierarchy[first] != null) setActivePath(pathname);
   }, [pathname]);
 
   return (
@@ -31,27 +30,33 @@ function PrimaryNav() {
             path={`/${path}`}
             left={`0${idx + 1} //`}
             right={RouteHierarchy[path].text}
+            active={activePath.split("/")[1] == path}
           />
         ))}
       </nav>
 
       <nav
         className={
-          RouteHierarchy[pathname.split("/")[1]] == null ||
-          RouteHierarchy[pathname.split("/")[1]].sub == null
+          RouteHierarchy[activePath.split("/")[1]] == null ||
+          RouteHierarchy[activePath.split("/")[1]].sub == null
             ? "hide"
             : ""
         }
       >
-        {RouteHierarchy[activePath] != null &&
-          RouteHierarchy[activePath].sub != null &&
-          Object.keys(RouteHierarchy[activePath].sub).map(
+        {RouteHierarchy[activePath.split("/")[1]] != null &&
+          RouteHierarchy[activePath.split("/")[1]].sub != null &&
+          Object.keys(RouteHierarchy[activePath.split("/")[1]].sub!).map(
             (second: string, idx: number) => (
               <ExpandingLink
                 key={`nav-secondary-${idx}`}
-                path={`/${activePath}/${second}`}
-                left={`${RouteHierarchy[activePath].sub![second].text} //`}
+                path={`/${activePath.split("/")[1]}/${second}`}
+                left={`${
+                  RouteHierarchy[activePath.split("/")[1]].sub![second].text
+                } //`}
                 right=""
+                active={activePath.startsWith(
+                  `/${activePath.split("/")[1]}/${second}`
+                )}
               />
             )
           )}
