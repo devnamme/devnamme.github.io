@@ -61,9 +61,7 @@ function ProjectDetails({ slug, setSlug, project }: Props) {
               <div className="media">
                 <img
                   src={`/media/${activeSlug}/${
-                    activeProject.thumbnail == null
-                      ? "thumbnail.png"
-                      : activeProject.thumbnail
+                    activeProject.media[mediaPage - 1]
                   }`}
                 />
 
