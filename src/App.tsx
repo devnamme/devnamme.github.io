@@ -32,11 +32,13 @@ function GeneralLayout() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
+  const [observer, setObserver] = useState<IntersectionObserver | null>(null);
+
   /**
    * Handler for horizontal scrolling
    * @param {Event} event Event object
    */
-  const onScroll = (event: Event) => {
+  const onWindowScroll = (event: Event) => {
     let bcr = document.body.getBoundingClientRect();
     let perc = (bcr.top / (bcr.height - window.innerHeight)) * -1;
 
@@ -46,10 +48,39 @@ function GeneralLayout() {
     }
   };
 
+  const urlMatches: {
+    [key: string]: string;
+  } = {
+    about: "/",
+    web: "/works/web",
+    mobile: "/works/mobile",
+    game: "/works/game",
+  };
+
+  const observerCallback: IntersectionObserverCallback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let path: string | null = urlMatches[entry.target.id];
+        if (path != null) navigate(path);
+      }
+    });
+  };
+
   useEffect(() => {
-    window.removeEventListener("scroll", onScroll);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    if (observer == null) {
+      let nob = new IntersectionObserver(observerCallback, {
+        rootMargin: "-50%",
+      });
+      Object.keys(urlMatches).forEach((id: string) =>
+        nob.observe(document.getElementById(id) as HTMLElement)
+      );
+
+      setObserver(nob);
+    }
+
+    window.removeEventListener("scroll", onWindowScroll);
+    window.addEventListener("scroll", onWindowScroll);
+    return () => window.removeEventListener("scroll", onWindowScroll);
   }, []);
 
   useEffect(() => {

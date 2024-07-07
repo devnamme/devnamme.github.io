@@ -9,6 +9,14 @@
   column-gap: 24px;
 }
 
+.gallery .group {
+  height: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 24px;
+}
+
 .gallery .thumbnail {
   height: 100%;
   width: auto;

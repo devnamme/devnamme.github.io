@@ -41,30 +41,29 @@ function Gallery({ setSlug }: Props) {
 
   return (
     <div className="gallery" ref={galleryRef}>
-      {["web", "mobile", "game"].map((key, i) =>
-        WorksDataGroups[key as "web" | "mobile" | "game"].map(
-          (slug: string, j) => (
-            <Link
-              to={`/project/${slug}`}
-              key={`gallery-${key}-${slug}`}
-              id={slug}
-            >
-              <img
-                ref={(el) => {
-                  if (j == 0) refs.current[i] = el;
-                }}
-                className="thumbnail"
-                src={`/media/${slug}/${
-                  WorksData[slug].thumbnail == null
-                    ? "thumbnail.png"
-                    : WorksData[slug].thumbnail
-                }`}
-                onClick={() => setSlug(slug)}
-              />
-            </Link>
-          )
-        )
-      )}
+      {["web", "mobile", "game"].map((key) => (
+        <div key={`group-${key}`} className="group" id={key}>
+          {WorksDataGroups[key as "web" | "mobile" | "game"].map(
+            (slug: string, j) => (
+              <Link
+                to={`/project/${slug}`}
+                key={`gallery-${key}-${slug}`}
+                id={slug}
+              >
+                <img
+                  className="thumbnail"
+                  src={`/media/${slug}/${
+                    WorksData[slug].thumbnail == null
+                      ? "thumbnail.png"
+                      : WorksData[slug].thumbnail
+                  }`}
+                  onClick={() => setSlug(slug)}
+                />
+              </Link>
+            )
+          )}{" "}
+        </div>
+      ))}
     </div>
   );
 }
