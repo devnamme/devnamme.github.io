@@ -3,11 +3,15 @@ import { WorksData, WorksDataGroups } from "../../data";
 import "./index.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-function Gallery(props) {
+interface Props {
+  setSlug: Function;
+}
+
+function Gallery({ setSlug }: Props) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const galleryRef = useRef(null);
-  const refs = useRef([null, null, null]);
+  const refs = useRef<(HTMLElement | null)[]>([null, null, null]);
 
   const paths = ["/works/web", "/works/mobile", "/works/game"];
 
@@ -37,29 +41,29 @@ function Gallery(props) {
 
   return (
     <div className="gallery" ref={galleryRef}>
-      {Object.keys(WorksDataGroups).map((key, i) =>
-        WorksDataGroups[key].map((slug, j) => (
-          <Link
-            to={`/project/${slug}`}
-            key={`gallery-${key}-${slug}`}
-            id={slug}
-          >
-            <img
-              ref={(el) => {
-                if (j == 0) refs.current[i] = el;
-              }}
-              className="thumbnail"
-              src={`/media/${slug}/${
-                WorksData[slug].thumbnail == null
-                  ? "thumbnail.png"
-                  : WorksData[slug].thumbnail
-              }`}
-              onClick={() => {
-                props.setSlug(slug);
-              }}
-            />
-          </Link>
-        ))
+      {["web", "mobile", "game"].map((key, i) =>
+        WorksDataGroups[key as "web" | "mobile" | "game"].map(
+          (slug: string, j) => (
+            <Link
+              to={`/project/${slug}`}
+              key={`gallery-${key}-${slug}`}
+              id={slug}
+            >
+              <img
+                ref={(el) => {
+                  if (j == 0) refs.current[i] = el;
+                }}
+                className="thumbnail"
+                src={`/media/${slug}/${
+                  WorksData[slug].thumbnail == null
+                    ? "thumbnail.png"
+                    : WorksData[slug].thumbnail
+                }`}
+                onClick={() => setSlug(slug)}
+              />
+            </Link>
+          )
+        )
       )}
     </div>
   );

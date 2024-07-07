@@ -1,7 +1,13 @@
 import { NavLink } from "react-router-dom";
 import "./index.css";
 
-function ExpandingLink({ path, left, right }) {
+interface Props {
+  path: string;
+  left: string;
+  right: string;
+}
+
+function ExpandingLink({ path, left, right }: Props) {
   return (
     <NavLink className="expanding-link link" to={path}>
       <p className="left">{left}</p>

@@ -103,9 +103,9 @@ function GeneralLayout() {
         <PortfolioSection setSlug={setSlug} />
 
         <ProjectDetails
-          setSlug={setSlug}
-          slug={slug}
           project={slug == null ? null : WorksData[slug]}
+          slug={slug}
+          setSlug={setSlug}
         />
       </main>
     </>

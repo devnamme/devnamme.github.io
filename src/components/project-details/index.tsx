@@ -1,56 +1,63 @@
 import { useEffect, useRef, useState } from "react";
 import "./index.css";
+import { Project } from "../../types/project.interface";
 
-function ProjectDetails(props) {
-  const [activeSlug, setActiveSlug] = useState(null);
-  const [activeProject, setActiveProject] = useState(null);
+interface Props {
+  slug: string | null;
+  setSlug: Function;
+  project: Project | null;
+}
 
-  const scrollContainerRef = useRef(null);
+function ProjectDetails({ slug, setSlug, project }: Props) {
+  const [activeSlug, setActiveSlug] = useState<string | null>(null);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
+
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [mediaPage, setMediaPage] = useState(2);
 
   useEffect(() => {
-    if (props.slug != null) setActiveSlug(props.slug);
-    if (props.project != null) {
-      setActiveProject(props.project);
+    if (slug != null) setActiveSlug(slug);
+    if (project != null) {
+      setActiveProject(project);
       setMediaPage(1);
     }
-  }, [props.slug, props.project]);
+  }, [slug, project]);
 
-  const calculateMediaPage = (x, bcr) => {
+  const calculateMediaPage = (x: number, bcr: DOMRect) => {
     let perc = (x - bcr.left) / bcr.width;
-    let val = Math.floor(perc / (1 / activeProject.media.length)) + 1;
+    let val = Math.floor(perc / (1 / activeProject!.media.length)) + 1;
 
     if (val <= 1) val = 1;
-    if (val >= activeProject.media.length) val = activeProject.media.length;
+    if (val >= activeProject!.media.length) val = activeProject!.media.length;
 
     return val;
   };
 
-  const handleScrollClick = (event) => {
+  const handleScrollClick: React.MouseEventHandler = (
+    event: React.MouseEvent
+  ) => {
     setMediaPage(
       calculateMediaPage(
         event.clientX,
-        scrollContainerRef.current.getBoundingClientRect()
+        scrollContainerRef.current!.getBoundingClientRect()
       )
     );
   };
 
-  const onScrollDrag = (event) => {};
+  const onScrollDrag: React.DragEventHandler = (event: React.DragEvent) => {};
 
   return (
     <>
       <div
-        className={`bg-tint ${props.project == null ? "" : "active"}`}
+        className={`bg-tint ${project == null ? "" : "active"}`}
         onClick={() => {
-          props.setSlug(null);
+          setSlug(null);
         }}
       />
-      <div
-        className={`project-details ${props.project == null ? "" : "active"}`}
-      >
+      <div className={`project-details ${project == null ? "" : "active"}`}>
         {activeProject != null && (
           <>
-            {activeProject.media != null && activeProject.media.length > 0 && (
+            {activeProject.media.length > 0 && (
               <div className="media">
                 <img
                   src={`/media/${activeSlug}/${
@@ -84,7 +91,7 @@ function ProjectDetails(props) {
               <div
                 className="back-group link"
                 onClick={() => {
-                  props.setSlug(null);
+                  setSlug(null);
                 }}
               >
                 <svg
@@ -101,30 +108,28 @@ function ProjectDetails(props) {
               <div className="info">
                 <h2 className="title">{activeProject.title}</h2>
 
-                {activeProject.tech != null &&
-                  activeProject.tech.length > 0 && (
-                    <div className="tech">
-                      {activeProject.tech.map((tech, idx) => (
-                        <p key={`project-tech-${idx}`}>{tech}</p>
-                      ))}
-                    </div>
-                  )}
+                {activeProject.tech.length > 0 && (
+                  <div className="tech">
+                    {activeProject.tech.map((tech, idx) => (
+                      <p key={`project-tech-${idx}`}>{tech}</p>
+                    ))}
+                  </div>
+                )}
 
-                {activeProject.links != null &&
-                  activeProject.links.length > 0 && (
-                    <div className="links">
-                      {activeProject.links.map((link, idx) => (
-                        <a
-                          key={`project-link-${idx}`}
-                          className="link"
-                          href={link.url}
-                          target="_blank"
-                        >
-                          {link.text} //
-                        </a>
-                      ))}
-                    </div>
-                  )}
+                {activeProject.links.length > 0 && (
+                  <div className="links">
+                    {activeProject.links.map((link, idx) => (
+                      <a
+                        key={`project-link-${idx}`}
+                        className="link"
+                        href={link.url}
+                        target="_blank"
+                      >
+                        {link.text} //
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {activeProject.content != null && (

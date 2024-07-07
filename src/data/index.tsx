@@ -266,7 +266,11 @@ export const WorksData: { [key: string]: Project } = {
   },
 };
 
-export const WorksDataGroups = {
+export const WorksDataGroups: {
+  web: string[];
+  mobile: string[];
+  game: string[];
+} = {
   web: [
     "the-guidon-archives",
     "vantage-magazine",
@@ -288,13 +292,13 @@ export const WorksDataGroups = {
   ],
 };
 
-export const ProducerData = {
+export const ProducerData: FixThisLater = {
   articles: [],
   videos: [],
   issues: [],
 };
 
-export const AwardsData = [
+export const AwardsData: FixThisLater = [
   {
     title: "Google Developer Student Clubs Hackfest 2023",
     website: "https://www.gdscloyola.org/",
@@ -303,7 +307,7 @@ export const AwardsData = [
   },
 ];
 
-export const ExperienceData = [
+export const ExperienceData: FixThisLater = [
   {
     title: "Web Developer Intern",
     company: "Azeus Systems Philippines Limited",

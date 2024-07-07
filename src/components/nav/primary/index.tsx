@@ -9,7 +9,7 @@ function PrimaryNav() {
 
   const [activePath, setActivePath] = useState("");
 
-  const primaryLinks = [
+  const primaryLinks: string[][] = [
     ["/", "About"],
     ["/works", "Works"],
     ["/produced", "Produced"],
@@ -17,7 +17,11 @@ function PrimaryNav() {
     ["/experiences", "Experiences"],
   ];
 
-  const secondaryLinks = {
+  const secondaryLinks: {
+    works: string[][];
+    produced: string[][];
+    [key: string]: string[][];
+  } = {
     works: [
       ["/works/web", "Web"],
       ["/works/mobile", "Mobile"],
@@ -45,7 +49,7 @@ function PrimaryNav() {
       <SecondaryNav />
 
       <nav>
-        {primaryLinks.map((link, idx) => (
+        {primaryLinks.map((link: string[], idx: number) => (
           <ExpandingLink
             key={`nav-primary-${idx}`}
             path={link[0]}
@@ -64,7 +68,7 @@ function PrimaryNav() {
         }
       >
         {secondaryLinks[activePath] != null &&
-          secondaryLinks[activePath].map((link, idx) => (
+          secondaryLinks[activePath].map((link: string[], idx: number) => (
             <ExpandingLink
               key={`nav-secondary-${idx}`}
               path={link[0]}

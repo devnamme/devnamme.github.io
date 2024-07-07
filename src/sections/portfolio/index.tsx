@@ -1,10 +1,14 @@
 import Gallery from "../../components/gallery";
 import "./index.css";
 
-function PortfolioSection(props) {
+interface Props {
+  setSlug: Function;
+}
+
+function PortfolioSection({ setSlug }: Props) {
   return (
     <section id="portfolio">
-      <Gallery setSlug={props.setSlug} />
+      <Gallery setSlug={setSlug} />
 
       <div></div>
     </section>
