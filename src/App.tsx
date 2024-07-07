@@ -9,6 +9,7 @@ import { NavList } from "./data/routes";
 import { WorksData } from "./data/works";
 import AboutSection from "./sections/about";
 import WorksSection from "./sections/works";
+import { CenterOnElement, FindByPathAndScrollTo } from "./utils/scroll";
 
 function App() {
   return (
@@ -43,15 +44,6 @@ function GeneralLayout() {
     }
   };
 
-  const urlMatches: {
-    [key: string]: string;
-  } = {
-    about: "/",
-    web: "/works/web",
-    mobile: "/works/mobile",
-    game: "/works/game",
-  };
-
   const observerCallback: IntersectionObserverCallback = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -79,14 +71,24 @@ function GeneralLayout() {
     return () => window.removeEventListener("scroll", onWindowScroll);
   }, []);
 
+  /**
+   * Checks path
+   */
   useEffect(() => {
-    /**
-     * Checks if the project slug is valid or not
-     */
-    if (pathname.startsWith("/project")) {
+    let second = pathname.split("/")[2];
+    if (pathname.startsWith("/works")) {
+      if (second == null) {
+        navigate("/works/web");
+        FindByPathAndScrollTo("/works/web");
+      }
+    } else if (pathname.startsWith("/project")) {
       let foo = pathname.split("/")[2];
       if (WorksData[foo] != null) setSlug(foo);
       else navigate("/");
+    } else if (pathname.startsWith("/produced")) {
+      if (second == null) {
+        navigate("/produced/articles");
+      }
     }
   }, [pathname]);
 
@@ -100,29 +102,18 @@ function GeneralLayout() {
       document.body.classList.remove("no-scroll");
     }
 
+    /**
+     * Center on thumbnail
+     */
     let thumbnail = document.getElementById(slug as string);
     if (thumbnail != null && mainRef.current != null) {
-      let left =
-        thumbnail.offsetLeft -
-        (window.innerWidth - thumbnail.getBoundingClientRect().width) / 2;
-
-      mainRef.current.scrollTo({
-        left: left,
-        behavior: "smooth",
-      });
-
-      let perc = left / (mainRef.current.scrollWidth - window.innerWidth);
-
-      window.scrollTo({
-        top: perc * (document.body.scrollHeight - window.innerHeight),
-        behavior: "smooth",
-      });
+      CenterOnElement(thumbnail, mainRef.current);
     }
   }, [slug]);
 
   return (
     <>
-      <main ref={mainRef}>
+      <main id="main" ref={mainRef}>
         <PrimaryNav />
         <SecondaryNav />
 

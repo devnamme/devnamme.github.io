@@ -7,7 +7,7 @@ interface Props {
 
 function WorksSection({ setSlug }: Props) {
   return (
-    <section id="portfolio">
+    <section id="works">
       <Gallery setSlug={setSlug} />
 
       <div></div>
