@@ -1,19 +1,13 @@
 import "./assets/css/global.css";
 import "./assets/css/fonts.css";
-import {
-  Navigate,
-  Route,
-  Routes,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import PrimaryNav from "./components/nav/primary";
 import SecondaryNav from "./components/nav/secondary";
 import { useEffect, useRef, useState } from "react";
 import AboutSection from "./sections/about";
 import PortfolioSection from "./sections/portfolio";
 import ProjectDetails from "./components/project-details";
-import { WorksData } from "./data";
+import { WorksData } from "./data/works";
 
 function App() {
   return (

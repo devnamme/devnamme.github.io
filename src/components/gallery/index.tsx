@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { WorksData, WorksDataGroups } from "../../data";
+import { WorksData, WorksDataGroups } from "../../data/works";
 import "./index.css";
 import { Link } from "react-router-dom";
 
