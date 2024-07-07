@@ -8,6 +8,7 @@ import AboutSection from "./sections/about";
 import WorksSection from "./sections/works";
 import ProjectDetails from "./components/project-details";
 import { WorksData } from "./data/works";
+import { NavList } from "./data/routes";
 
 function App() {
   return (
@@ -54,7 +55,7 @@ function GeneralLayout() {
   const observerCallback: IntersectionObserverCallback = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        let path: string | null = urlMatches[entry.target.id];
+        let path: string | null = NavList[entry.target.id];
         if (path != null) navigate(path);
       }
     });
@@ -65,9 +66,10 @@ function GeneralLayout() {
       let nob = new IntersectionObserver(observerCallback, {
         rootMargin: "-50%",
       });
-      Object.keys(urlMatches).forEach((id: string) =>
-        nob.observe(document.getElementById(id) as HTMLElement)
-      );
+      Object.keys(NavList).forEach((id: string) => {
+        let el = document.getElementById(id);
+        if (el != null) nob.observe(el as HTMLElement);
+      });
 
       setObserver(nob);
     }
