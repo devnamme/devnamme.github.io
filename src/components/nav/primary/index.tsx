@@ -1,9 +1,9 @@
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { RouteHierarchy } from "../../../data/routes";
 import ExpandingLink from "../../expanding-link";
 import SecondaryNav from "../secondary";
 import "./index.css";
-import { useEffect, useState } from "react";
-import { RouteHierarchy, PrimaryRoute } from "../../../data/routes";
 
 function PrimaryNav() {
   const { pathname } = useLocation();

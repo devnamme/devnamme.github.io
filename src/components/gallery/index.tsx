@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { WorksData, WorksDataGroups } from "../../data/works";
 import "./index.css";
-import { Link } from "react-router-dom";
 
 interface Props {
   setSlug: Function;

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import "./index.css";
 import { Project } from "../../types/project.interface";
+import "./index.css";
 
 interface Props {
   slug: string | null;
