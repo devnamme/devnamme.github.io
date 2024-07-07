@@ -48,7 +48,9 @@ function GeneralLayout() {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         let path: string | null = NavList[entry.target.id];
-        if (path != null) navigate(path);
+        if (path != null) {
+          navigate(path);
+        }
       }
     });
   };
