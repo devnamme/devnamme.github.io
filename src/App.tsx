@@ -26,8 +26,8 @@ function App() {
 }
 
 function GeneralLayout() {
-  const mainRef = useRef(null);
-  const [slug, setSlug] = useState(null);
+  const mainRef = useRef<HTMLElement>(null);
+  const [slug, setSlug] = useState<string | null>(null);
 
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -36,12 +36,14 @@ function GeneralLayout() {
    * Handler for horizontal scrolling
    * @param {Event} event Event object
    */
-  const onScroll = (event) => {
+  const onScroll = (event: Event) => {
     let bcr = document.body.getBoundingClientRect();
     let perc = (bcr.top / (bcr.height - window.innerHeight)) * -1;
 
-    mainRef.current.scrollLeft =
-      perc * (mainRef.current.scrollWidth - window.innerWidth);
+    if (mainRef.current != null) {
+      mainRef.current.scrollLeft =
+        perc * (mainRef.current.scrollWidth - window.innerWidth);
+    }
   };
 
   useEffect(() => {
@@ -71,7 +73,7 @@ function GeneralLayout() {
       document.body.classList.remove("no-scroll");
     }
 
-    let thumbnail = document.getElementById(slug);
+    let thumbnail = document.getElementById(slug as string);
     if (thumbnail != null && mainRef.current != null) {
       let left =
         thumbnail.offsetLeft -

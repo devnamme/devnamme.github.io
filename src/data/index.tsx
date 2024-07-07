@@ -1,9 +1,11 @@
+import { Project } from "../types/project.interface";
+
 export const Labels = {
   website: "Open website",
   github: "View on GitHub",
 };
 
-export const WorksData = {
+export const WorksData: { [key: string]: Project } = {
   "the-guidon-archives": {
     title: "The GUIDON Archives",
     tech: ["Headless WordPress", "PHP", "Vite", "ReactJS"],
@@ -281,7 +283,9 @@ export const WorksDataGroups = {
   mobile: [
     // "beadle"
   ],
-  game: [],
+  game: [
+    //
+  ],
 };
 
 export const ProducerData = {
