@@ -44,7 +44,7 @@ function GeneralLayout() {
     }
   };
 
-  const observerCallback: IntersectionObserverCallback = (entries) => {
+  const obsCallback: IntersectionObserverCallback = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         let path: string | null = NavList[entry.target.id];
@@ -56,20 +56,19 @@ function GeneralLayout() {
   };
 
   useEffect(() => {
-    if (observer == null) {
-      let nob = new IntersectionObserver(observerCallback, {
-        rootMargin: "-50%",
-      });
-      Object.keys(NavList).forEach((id: string) => {
-        let el = document.getElementById(id);
-        if (el != null) nob.observe(el as HTMLElement);
-      });
+    let nob = new IntersectionObserver(obsCallback, {
+      rootMargin: "-50%",
+    });
+    Object.keys(NavList).forEach((id: string) => {
+      let el = document.getElementById(id);
+      if (el != null) nob.observe(el as HTMLElement);
+    });
 
-      setObserver(nob);
-    }
+    setObserver(nob);
 
     window.removeEventListener("scroll", onWindowScroll);
     window.addEventListener("scroll", onWindowScroll);
+
     return () => window.removeEventListener("scroll", onWindowScroll);
   }, []);
 
