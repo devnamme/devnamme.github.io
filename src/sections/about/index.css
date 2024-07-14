@@ -6,6 +6,9 @@
   align-items: center;
   flex-flow: column nowrap;
   justify-content: center;
+  row-gap: 24px;
+
+  padding: var(--general-padding-y) var(--general-padding-x);
 }
 
 #about .title {
@@ -13,6 +16,7 @@
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
+  line-height: 1;
 }
 
 #about .text {

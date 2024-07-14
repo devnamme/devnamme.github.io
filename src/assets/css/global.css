@@ -114,7 +114,10 @@ main > * {
 
 @media screen and (max-width: 576px) {
   :root {
+    --title-l-font-size: 64px;
     --title-font-size: 40px;
+
+    --body-l-font-size: 24px;
 
     --general-padding-x: 24px;
     --general-padding-y: 24px;
