@@ -1,14 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { MouseEventHandler, useEffect, useRef, useState } from "react";
 import { Project } from "../../types/project.interface";
 import "./index.css";
 
 interface Props {
   slug: string | null;
-  setSlug: Function;
+  closeDetails: MouseEventHandler;
   project: Project | null;
 }
 
-export default function ProjectDetails({ slug, setSlug, project }: Props) {
+export default function ProjectDetails({ slug, closeDetails, project }: Props) {
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
@@ -44,15 +44,11 @@ export default function ProjectDetails({ slug, setSlug, project }: Props) {
     );
   };
 
-  const onScrollDrag: React.DragEventHandler = (event: React.DragEvent) => {};
-
   return (
     <>
       <div
         className={`bg-tint ${project == null ? "" : "active"}`}
-        onClick={() => {
-          setSlug(null);
-        }}
+        onClick={closeDetails}
       />
       <div className={`project-details ${project == null ? "" : "active"}`}>
         {activeProject != null && (
@@ -86,12 +82,7 @@ export default function ProjectDetails({ slug, setSlug, project }: Props) {
             )}
 
             <div className="metadata">
-              <div
-                className="back-group link"
-                onClick={() => {
-                  setSlug(null);
-                }}
-              >
+              <div className="back-group link" onClick={closeDetails}>
                 <svg
                   viewBox="0 0 20 20"
                   fill="currentColor"

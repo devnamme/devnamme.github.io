@@ -124,7 +124,10 @@ function GeneralLayout() {
         <ProjectDetails
           project={slug == null ? null : WorksData[slug]}
           slug={slug}
-          setSlug={setSlug}
+          closeDetails={() => {
+            // navigate(-1);
+            setSlug(null);
+          }}
         />
       </main>
     </>
