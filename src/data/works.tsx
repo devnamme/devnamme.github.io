@@ -31,6 +31,7 @@ export const WorksData: { [key: string]: Project } = {
       "08.png",
       "09.png",
       "10.png",
+      "11.png",
     ],
     content: (
       <>
@@ -79,7 +80,7 @@ export const WorksData: { [key: string]: Project } = {
         url: "https://github.com/theguidon/vantmag-revamp-2022",
       },
     ],
-    media: ["thumbnail.png"],
+    media: ["thumbnail.png", "01.png", "02.png", "03.png", "04.png", "05.png"],
     content: (
       <>
         <p>
