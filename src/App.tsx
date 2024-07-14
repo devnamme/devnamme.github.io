@@ -30,11 +30,7 @@ function GeneralLayout() {
 
   const [observer, setObserver] = useState<IntersectionObserver | null>(null);
 
-  /**
-   * Handler for horizontal scrolling
-   * @param {Event} event Event object
-   */
-  const onWindowScroll = (event: Event) => {
+  const onWindowScroll: EventListener = (event: Event) => {
     let bcr = document.body.getBoundingClientRect();
     let perc = (bcr.top / (bcr.height - window.innerHeight)) * -1;
 
@@ -72,9 +68,6 @@ function GeneralLayout() {
     return () => window.removeEventListener("scroll", onWindowScroll);
   }, []);
 
-  /**
-   * Checks path
-   */
   useEffect(() => {
     let second = pathname.split("/")[2];
     if (pathname.startsWith("/works")) {
@@ -94,19 +87,13 @@ function GeneralLayout() {
   }, [pathname]);
 
   useEffect(() => {
-    /**
-     * Disables/enables scrolling depending on slug
-     */
     if (slug != null) {
       document.body.classList.add("no-scroll");
     } else {
       document.body.classList.remove("no-scroll");
     }
 
-    /**
-     * Center on thumbnail
-     */
-    let thumbnail = document.getElementById(slug as string);
+    const thumbnail = document.getElementById(slug!);
     if (thumbnail != null && mainRef.current != null) {
       CenterOnElement(thumbnail, mainRef.current);
     }
@@ -125,7 +112,6 @@ function GeneralLayout() {
           project={slug == null ? null : WorksData[slug]}
           slug={slug}
           closeDetails={() => {
-            // navigate(-1);
             setSlug(null);
           }}
         />
