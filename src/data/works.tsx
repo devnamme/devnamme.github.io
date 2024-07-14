@@ -125,7 +125,7 @@ export const WorksData: { [key: string]: Project } = {
         url: "https://github.com/theguidon/gdn-main-2022",
       },
     ],
-    media: ["thumbnail.png"],
+    media: ["thumbnail.png", "01.png", "02.png", "03.png", "04.png"],
     content: (
       <>
         <p>A complete redesign of the main website of The GUIDON.</p>

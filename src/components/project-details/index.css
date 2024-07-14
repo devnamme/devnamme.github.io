@@ -7,7 +7,7 @@
 
   background-color: black;
 
-  transition: 0.3s;
+  transition: 0.5s ease-in-out;
   opacity: 0;
   pointer-events: none;
 }
@@ -24,15 +24,15 @@
 
   height: 100vh;
   width: 100%;
-  max-width: 720px;
+  max-width: 1600px;
   background-color: var(--dark-bg-primary);
 
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   align-items: stretch;
 
   transform: translate(100%, 0);
-  transition: 0.3s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .project-details.active {
@@ -40,21 +40,120 @@
 }
 
 .project-details .media {
-  height: 100vh;
-  max-height: 300px;
-  flex-shrink: 0;
-  flex-grow: 0;
+  width: 100%;
+  max-width: 720px;
+  height: 100%;
+  flex: 1 1 100%;
   position: relative;
 
   background-color: var(--dark-bg-light);
-  padding: 24px var(--general-padding-x);
+  padding: 24px 24px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 24px;
+  align-items: center;
+
+  /* overflow: hidden; */
 }
 
-.project-details .media img {
+.project-details .media .selected-media {
+  flex: 0 1 0;
   width: 100%;
-  height: 100%;
+  height: auto;
+  /* max-height: 360px; */
+  aspect-ratio: 16 / 9;
+
   object-fit: contain;
   object-position: center;
+}
+
+.project-details .media .edge {
+  height: 100%;
+  width: 0;
+  opacity: 0;
+  overflow: clip;
+
+  border: none;
+  display: none;
+  position: absolute;
+  top: 0;
+
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.3s ease-in-out;
+}
+
+.project-details .media .edge.hide {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.project-details .media:hover .edge {
+  transform: translate(0, 0) !important;
+  width: 80px;
+  opacity: 1;
+}
+
+.project-details .media .edge.left {
+  background: linear-gradient(to right, #00000080, #00000000);
+  left: 0;
+  transform: translate(-100%, 0);
+}
+
+.project-details .media .edge.right {
+  background: linear-gradient(to left, #00000080, #00000000);
+  right: 0;
+  transform: translate(100%, 0);
+}
+
+.project-details .media .edge svg {
+  width: 48px;
+}
+
+.project-details .media .all-media-container {
+  flex: 1 1 0;
+
+  margin: -8px -8px -24px;
+  padding: 8px 8px 24px;
+  padding-bottom: 24px;
+
+  overflow-y: auto;
+}
+
+.project-details .media .all-media {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 24px;
+  column-gap: 24px;
+}
+
+.project-details .media .all-media img {
+  width: 100%;
+  height: 100%;
+  /* aspect-ratio: 16 / 9; */
+
+  object-fit: contain;
+  object-position: center;
+  overflow: visible;
+
+  cursor: pointer;
+  position: relative;
+}
+
+.project-details .media .all-media img.active {
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  box-sizing: border-box;
+
+  margin: -8px;
+  padding: 7px;
+
+  border: 1px solid white;
 }
 
 .project-details .media .scroll-container {
@@ -84,13 +183,8 @@
   padding: var(--general-padding-y) var(--general-padding-x);
 
   overflow-y: auto;
-
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.project-details .metadata::-webkit-scrollbar {
-  display: none;
+  flex: 1 1 100%;
+  height: 100%;
 }
 
 .project-details .metadata .back-group {
@@ -100,7 +194,6 @@
   align-items: center;
 
   cursor: pointer;
-  /* margin: 0 0 32px; */
   margin: 0 0 24px;
 }
 
@@ -162,6 +255,20 @@
   color: inherit;
 }
 
+@media screen and (min-width: 1600px) {
+  .project-details {
+    top: unset;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    max-height: 1200px;
+
+    transform: translate(0, 100%);
+  }
+}
+
 @media screen and (max-width: 1200px) {
 }
 
@@ -169,7 +276,39 @@
 }
 
 @media screen and (max-width: 768px) {
+  .project-details {
+    flex-flow: column nowrap;
+  }
+
+  .project-details .media {
+    max-width: unset;
+    flex: 0 0 0;
+    padding: 24px var(--general-padding-x);
+  }
+
+  .project-details .media .selected-media {
+    max-width: 768px;
+  }
+
+  .project-details .media .edge {
+    display: flex;
+  }
+
+  .project-details .media .all-media-container {
+    display: none;
+  }
+
+  .project-details .metadata {
+    max-width: unset;
+  }
 }
 
 @media screen and (max-width: 576px) {
+  .project-details .media {
+    padding: 16px var(--general-padding-x);
+  }
+
+  .project-details .media .selected-media {
+    max-width: 400px;
+  }
 }

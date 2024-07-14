@@ -72,6 +72,7 @@ main > * {
 /* default */
 .link {
   font-size: var(--link-font-size);
+  max-height: var(--link-font-size);
 
   opacity: 0.4;
   transition: 0.3s;
@@ -90,6 +91,16 @@ main > * {
 /* active */
 .link.active {
   opacity: 1;
+}
+
+/* scrollbar */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 @media screen and (max-width: 1200px) {
