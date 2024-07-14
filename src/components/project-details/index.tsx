@@ -13,36 +13,15 @@ export default function ProjectDetails({ slug, closeDetails, project }: Props) {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [mediaPage, setMediaPage] = useState(2);
+  const [mediaPage, setMediaPage] = useState(0);
 
   useEffect(() => {
     if (slug != null) setActiveSlug(slug);
     if (project != null) {
       setActiveProject(project);
-      setMediaPage(1);
+      setMediaPage(0);
     }
   }, [slug, project]);
-
-  const calculateMediaPage = (x: number, bcr: DOMRect) => {
-    let perc = (x - bcr.left) / bcr.width;
-    let val = Math.floor(perc / (1 / activeProject!.media.length)) + 1;
-
-    if (val <= 1) val = 1;
-    if (val >= activeProject!.media.length) val = activeProject!.media.length;
-
-    return val;
-  };
-
-  const handleScrollClick: React.MouseEventHandler = (
-    event: React.MouseEvent
-  ) => {
-    setMediaPage(
-      calculateMediaPage(
-        event.clientX,
-        scrollContainerRef.current!.getBoundingClientRect()
-      )
-    );
-  };
 
   return (
     <>
@@ -56,28 +35,26 @@ export default function ProjectDetails({ slug, closeDetails, project }: Props) {
             {activeProject.media.length > 0 && (
               <div className="media">
                 <img
-                  src={`/media/${activeSlug}/${
-                    activeProject.media[mediaPage - 1]
-                  }`}
+                  className="selected-media"
+                  src={`/media/${activeSlug}/${activeProject.media[mediaPage]}`}
                 />
 
-                {activeProject.media.length > 1 && (
-                  <div
-                    className="scroll-container"
-                    ref={scrollContainerRef}
-                    onClick={handleScrollClick}
-                  >
-                    <div
-                      className="scroll-fill"
-                      style={{
-                        width: `${(1 / activeProject.media.length) * 100}%`,
-                        marginLeft: `${
-                          ((mediaPage - 1) / activeProject.media.length) * 100
-                        }%`,
-                      }}
-                    />
+                <div className="all-media-container no-scrollbar">
+                  <div className="all-media">
+                    {activeProject.media.map(
+                      (fileName: string, idx: number) => (
+                        <img
+                          key={`all-media-${idx}`}
+                          className={`tile ${
+                            mediaPage === idx ? "active" : ""
+                          }`}
+                          src={`/media/${activeSlug}/${fileName}`}
+                          onClick={() => setMediaPage(idx)}
+                        />
+                      )
+                    )}
                   </div>
-                )}
+                </div>
               </div>
             )}
 
