@@ -72,6 +72,7 @@ main > * {
 /* default */
 .link {
   font-size: var(--link-font-size);
+  max-height: var(--link-font-size);
 
   opacity: 0.4;
   transition: 0.3s;

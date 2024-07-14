@@ -33,7 +33,7 @@
   column-gap: var(--links-col-gap);
   row-gap: var(--links-row-gap);
 
-  max-height: calc(2 * var(--title-font-size));
+  max-height: calc(3 * var(--link-font-size) + 2 * var(--links-row-gap));
   overflow: clip;
   transition: 0.5s ease-in-out;
 }
@@ -41,6 +41,10 @@
 .primary-nav nav.hide {
   max-height: 0;
   opacity: 0;
+}
+
+.primary-nav nav.hide a {
+  max-height: 0;
 }
 
 .primary-nav .secondary-nav {

@@ -14,10 +14,10 @@
 
 /* hover */
 .expanding-link:hover .right {
-  max-width: 300px;
+  max-width: 200px;
 }
 
 /* active */
 .expanding-link.active .right {
-  max-width: 300px;
+  max-width: 200px;
 }
