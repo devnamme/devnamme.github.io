@@ -5,7 +5,7 @@ interface Props {
   setSlug: Function;
 }
 
-function WorksSection({ setSlug }: Props) {
+export default function WorksSection({ setSlug }: Props) {
   return (
     <section id="works">
       <Gallery setSlug={setSlug} />
@@ -14,5 +14,3 @@ function WorksSection({ setSlug }: Props) {
     </section>
   );
 }
-
-export default WorksSection;

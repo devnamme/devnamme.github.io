@@ -9,3 +9,5 @@ export interface Project {
   content: JSX.Element;
   thumbnail?: string;
 }
+
+export type WorksDataGroup = "web" | "mobile" | "game";

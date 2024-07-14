@@ -9,9 +9,10 @@ import { NavList } from "./data/routes";
 import { WorksData } from "./data/works";
 import AboutSection from "./sections/about";
 import WorksSection from "./sections/works";
+import { RouteState } from "./types/route.interface";
 import { CenterOnElement, FindByPathAndScrollTo } from "./utils/scroll";
 
-function App() {
+export default function App() {
   return (
     <>
       <Routes>
@@ -21,20 +22,50 @@ function App() {
   );
 }
 
-function GeneralLayout() {
-  const mainRef = useRef<HTMLElement>(null);
-  const [slug, setSlug] = useState<string | null>(null);
+const DEFAULT_ROUTE_STATE: RouteState = {
+  primary: "about",
+  secondary: "",
+  routes: {
+    about: { active: true },
+    works: {
+      active: false,
+      routes: {
+        web: { active: false },
+        mobile: { active: false },
+        game: { active: false },
+      },
+    },
+    produced: {
+      active: false,
+      routes: {
+        articles: { active: false },
+        videos: { active: false },
+        issues: { active: false },
+      },
+    },
+    awards: {
+      active: false,
+    },
+    experiences: {
+      active: false,
+    },
+  },
+};
 
+function GeneralLayout() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
+  const [routeState, setRouteState] = useState<RouteState>({
+    ...DEFAULT_ROUTE_STATE,
+  });
+
+  const mainRef = useRef<HTMLElement>(null);
+  const [slug, setSlug] = useState<string | null>(null);
+
   const [observer, setObserver] = useState<IntersectionObserver | null>(null);
 
-  /**
-   * Handler for horizontal scrolling
-   * @param {Event} event Event object
-   */
-  const onWindowScroll = (event: Event) => {
+  const onWindowScroll: EventListener = (event: Event) => {
     let bcr = document.body.getBoundingClientRect();
     let perc = (bcr.top / (bcr.height - window.innerHeight)) * -1;
 
@@ -44,19 +75,45 @@ function GeneralLayout() {
     }
   };
 
-  const obsCallback: IntersectionObserverCallback = (entries) => {
+  const observerCallback: IntersectionObserverCallback = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        let path: string | null = NavList[entry.target.id];
-        if (path != null) {
-          navigate(path);
+        const info: { path: string; slugs: string[] } =
+          NavList[entry.target.id];
+        if (info !== undefined) {
+          // navigate(info.path);
+
+          const nrs = { ...routeState };
+          nrs.primary = NavList[entry.target.id].slugs[0];
+          nrs.secondary =
+            NavList[entry.target.id].slugs[1] === undefined
+              ? ""
+              : NavList[entry.target.id].slugs[1];
+
+          Object.keys(nrs.routes).forEach((primary: string) => {
+            nrs.routes[primary].active = false;
+
+            if (nrs.routes[primary].routes !== undefined) {
+              Object.keys(nrs.routes[primary].routes).forEach(
+                (secondary: string) => {
+                  nrs.routes[primary].routes![secondary].active = false;
+                }
+              );
+            }
+          });
+
+          if (info.slugs.length >= 1) nrs.routes[info.slugs[0]].active = true;
+          if (info.slugs.length >= 2)
+            nrs.routes[info.slugs[0]].routes![info.slugs[1]].active = true;
+
+          setRouteState(nrs);
         }
       }
     });
   };
 
   useEffect(() => {
-    let nob = new IntersectionObserver(obsCallback, {
+    let nob = new IntersectionObserver(observerCallback, {
       rootMargin: "-50%",
     });
     Object.keys(NavList).forEach((id: string) => {
@@ -72,9 +129,6 @@ function GeneralLayout() {
     return () => window.removeEventListener("scroll", onWindowScroll);
   }, []);
 
-  /**
-   * Checks path
-   */
   useEffect(() => {
     let second = pathname.split("/")[2];
     if (pathname.startsWith("/works")) {
@@ -83,9 +137,9 @@ function GeneralLayout() {
         FindByPathAndScrollTo("/works/web");
       }
     } else if (pathname.startsWith("/project")) {
-      let foo = pathname.split("/")[2];
-      if (WorksData[foo] != null) setSlug(foo);
-      else navigate("/");
+      const projectSlug = pathname.split("/")[2];
+      if (WorksData[projectSlug] != null) setSlug(projectSlug);
+      navigate("/");
     } else if (pathname.startsWith("/produced")) {
       if (second == null) {
         navigate("/produced/articles");
@@ -94,19 +148,13 @@ function GeneralLayout() {
   }, [pathname]);
 
   useEffect(() => {
-    /**
-     * Disables/enables scrolling depending on slug
-     */
     if (slug != null) {
       document.body.classList.add("no-scroll");
     } else {
       document.body.classList.remove("no-scroll");
     }
 
-    /**
-     * Center on thumbnail
-     */
-    let thumbnail = document.getElementById(slug as string);
+    const thumbnail = document.getElementById(slug!);
     if (thumbnail != null && mainRef.current != null) {
       CenterOnElement(thumbnail, mainRef.current);
     }
@@ -115,7 +163,7 @@ function GeneralLayout() {
   return (
     <>
       <main id="main" ref={mainRef}>
-        <PrimaryNav />
+        <PrimaryNav routeState={routeState} setRouteState={setRouteState} />
         <SecondaryNav />
 
         <AboutSection />
@@ -124,11 +172,11 @@ function GeneralLayout() {
         <ProjectDetails
           project={slug == null ? null : WorksData[slug]}
           slug={slug}
-          setSlug={setSlug}
+          closeDetails={() => {
+            setSlug(null);
+          }}
         />
       </main>
     </>
   );
 }
-
-export default App;

@@ -1,25 +1,25 @@
 import { useRef } from "react";
-import { Link } from "react-router-dom";
 import { WorksData, WorksDataGroups } from "../../data/works";
+import { WorksDataGroup } from "../../types/project.interface";
 import "./index.css";
 
 interface Props {
   setSlug: Function;
 }
 
-function Gallery({ setSlug }: Props) {
+export default function Gallery({ setSlug }: Props) {
   const galleryRef = useRef(null);
 
   return (
     <div className="gallery" ref={galleryRef}>
-      {["web", "mobile", "game"].map((key) => (
-        <div key={`group-${key}`} className="group" id={key}>
-          {WorksDataGroups[key as "web" | "mobile" | "game"].map(
-            (slug: string, j) => (
-              <Link
-                to={`/project/${slug}`}
+      {(["web", "mobile", "game"] as WorksDataGroup[]).map(
+        (key: WorksDataGroup) => (
+          <div key={`group-${key}`} className="group" id={key}>
+            {WorksDataGroups[key].map((slug: string, j) => (
+              <div
                 key={`gallery-${key}-${slug}`}
                 id={slug}
+                onClick={() => setSlug(slug)}
               >
                 <img
                   className="thumbnail"
@@ -30,13 +30,11 @@ function Gallery({ setSlug }: Props) {
                   }`}
                   onClick={() => setSlug(slug)}
                 />
-              </Link>
-            )
-          )}{" "}
-        </div>
-      ))}
+              </div>
+            ))}
+          </div>
+        )
+      )}
     </div>
   );
 }
-
-export default Gallery;

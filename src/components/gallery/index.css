@@ -17,9 +17,6 @@
   column-gap: 24px;
 
   min-width: 100vw;
-
-  /* temporary */
-  background-color: #000000;
 }
 
 .gallery .thumbnail {

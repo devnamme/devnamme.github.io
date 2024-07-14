@@ -7,8 +7,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  /* top: var(--general-padding-y); */
-  /* left: var(--general-padding-x); */
 }
 
 .primary-nav .title {
@@ -17,9 +15,10 @@
   font-size: var(--title-font-size);
   line-height: 1;
 
-  max-height: var(--title-font-size);
-  overflow: clip;
   transition: 0.5s ease-in-out;
+  overflow: clip;
+
+  max-height: var(--title-font-size);
 }
 
 .primary-nav .title.hide {

@@ -1,1 +1,1 @@
-type FixThisLater = any;
+export type FixThisLater = any;
