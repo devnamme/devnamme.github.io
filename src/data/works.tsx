@@ -100,7 +100,8 @@ export const WorksData: { [key: string]: Project } = {
         url: "https://interactive.theguidon.com",
       },
     ],
-    media: ["thumbnail.png"],
+    media: ["01.png", "02.png", "03.png", "04.png"],
+    thumbnail: "01.png",
     content: (
       <>
         <p>
@@ -211,7 +212,15 @@ export const WorksData: { [key: string]: Project } = {
         url: "https://github.com/theguidon/dead-end-2023",
       },
     ],
-    media: ["thumbnail.png"],
+    media: [
+      "thumbnail.png",
+      "01.png",
+      "02.png",
+      "03.png",
+      "04.png",
+      "05.png",
+      "06.png",
+    ],
     content: (
       <>
         <p>
@@ -300,6 +309,78 @@ export const WorksData: { [key: string]: Project } = {
       </>
     ),
   },
+  "ma10mon-cs": {
+    title: "Ma10mon: CS",
+    tech: ["HTML", "JavaScript"],
+    links: [
+      {
+        text: Labels.website,
+        url: "https://emmanevangelista.com/math-10-integrating-project/",
+      },
+      {
+        text: Labels.github,
+        url: "https://github.com/dnamme/math-10-integrating-project",
+      },
+    ],
+    media: ["thumbnail.jpg"],
+    thumbnail: "thumbnail.jpg",
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
+  },
+  "race-to-twelve": {
+    title: "Race to Twelve",
+    tech: ["C++"],
+    links: [
+      {
+        text: Labels.github,
+        url: "https://github.com/dnamme/race-to-twelve",
+      },
+    ],
+    media: ["thumbnail.png"],
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
+  },
+  slimed: {
+    title: "Slime'd",
+    tech: ["Arduino", "C++"],
+    links: [],
+    media: ["thumbnail.jpg"],
+    thumbnail: "thumbnail.jpg",
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
+  },
+
+  "skiulas-chamber": {
+    title: "Skiula's Chamber",
+    tech: ["Java"],
+    links: [],
+    media: ["thumbnail.png"],
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
+  },
+  "fuji-animation": {
+    title: "Mt. Fuji Animation",
+    tech: ["Java"],
+    links: [],
+    media: ["thumbnail.png"],
+    content: (
+      <>
+        <p>Hello world</p>
+      </>
+    ),
+  },
 };
 
 export const WorksDataGroups: {
@@ -325,6 +406,10 @@ export const WorksDataGroups: {
     // "beadle"
   ],
   game: [
-    //
+    "ma10mon-cs",
+    "race-to-twelve",
+    // "slimed",
+    "skiulas-chamber",
+    "fuji-animation",
   ],
 };

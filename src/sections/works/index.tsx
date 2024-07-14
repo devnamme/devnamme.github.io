@@ -10,7 +10,7 @@ export default function WorksSection({ setSlug }: Props) {
     <section id="works">
       <Gallery setSlug={setSlug} />
 
-      <div></div>
+      {/* <div></div> */}
     </section>
   );
 }

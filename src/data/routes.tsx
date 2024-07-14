@@ -21,10 +21,10 @@ export const RouteHierarchy: {
         slug: "web",
         text: "Web",
       },
-      mobile: {
-        slug: "mobile",
-        text: "Mobile",
-      },
+      // mobile: {
+      //   slug: "mobile",
+      //   text: "Mobile",
+      // },
       game: {
         slug: "game",
         text: "Game",
@@ -67,7 +67,7 @@ export const NavList: {
 } = {
   about: { path: "/", slugs: ["about"] },
   web: { path: "/works/web", slugs: ["works", "web"] },
-  mobile: { path: "/works/mobile", slugs: ["works", "mobile"] },
+  // mobile: { path: "/works/mobile", slugs: ["works", "mobile"] },
   game: { path: "/works/game", slugs: ["works", "game"] },
   articles: { path: "/produced/articles", slugs: ["produced", "articles"] },
   videos: { path: "/produced/videos", slugs: ["produced", "videos"] },

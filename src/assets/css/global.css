@@ -59,7 +59,7 @@ main {
   padding: var(--general-padding-y) 0;
   display: flex;
   flex-flow: row nowrap;
-  align-items: flex-end;
+  align-items: center;
   column-gap: 64px;
 
   overflow-x: hidden;

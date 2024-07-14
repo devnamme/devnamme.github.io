@@ -1,17 +1,12 @@
 .gallery {
   height: 100%;
-  height: 100px;
-
-  height: 45vh;
 
   display: flex;
   flex-flow: row nowrap;
-  column-gap: 24px;
+  column-gap: 256px;
 }
 
 .gallery .group {
-  height: 100%;
-
   display: flex;
   flex-flow: row nowrap;
   column-gap: 24px;
@@ -20,10 +15,57 @@
 }
 
 .gallery .thumbnail {
-  height: 100%;
+  height: 45vh;
   width: auto;
   display: block;
   border-radius: 4px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: left center;
 
   cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+  .gallery {
+    column-gap: 128px;
+  }
+
+  .gallery .thumbnail {
+    height: auto;
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .gallery {
+    column-gap: 64px;
+  }
+
+  .gallery .thumbnail {
+    height: 20vh;
+    width: auto;
+  }
+
+  .gallery .group {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 24px;
+
+    display: flex;
+    flex-flow: column wrap;
+    height: calc(20vh + 24px + 20vh);
+    row-gap: 24px;
+  }
+
+  .gallery .group > div:nth-child(2n) {
+    transform: translate(calc(50% + 12px), 0);
+  }
 }
