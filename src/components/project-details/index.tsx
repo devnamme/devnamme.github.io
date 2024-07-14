@@ -8,7 +8,7 @@ interface Props {
   project: Project | null;
 }
 
-function ProjectDetails({ slug, setSlug, project }: Props) {
+export default function ProjectDetails({ slug, setSlug, project }: Props) {
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
@@ -140,5 +140,3 @@ function ProjectDetails({ slug, setSlug, project }: Props) {
     </>
   );
 }
-
-export default ProjectDetails;

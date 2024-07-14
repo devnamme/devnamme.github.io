@@ -7,7 +7,7 @@ interface Props {
   setSlug: Function;
 }
 
-function Gallery({ setSlug }: Props) {
+export default function Gallery({ setSlug }: Props) {
   const galleryRef = useRef(null);
 
   return (
@@ -38,5 +38,3 @@ function Gallery({ setSlug }: Props) {
     </div>
   );
 }
-
-export default Gallery;

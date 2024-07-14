@@ -1,6 +1,6 @@
 import "./index.css";
 
-function AboutSection() {
+export default function AboutSection() {
   return (
     <section id="about">
       <h1 className="title">Emman Evangelista</h1>
@@ -11,5 +11,3 @@ function AboutSection() {
     </section>
   );
 }
-
-export default AboutSection;

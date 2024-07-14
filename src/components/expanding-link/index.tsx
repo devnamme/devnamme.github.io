@@ -9,7 +9,12 @@ interface Props {
   active?: boolean;
 }
 
-function ExpandingLink({ path, left, right, active = false }: Props) {
+export default function ExpandingLink({
+  path,
+  left,
+  right,
+  active = false,
+}: Props) {
   return (
     <NavLink
       className={`expanding-link link ${active ? "active" : ""}`}
@@ -21,5 +26,3 @@ function ExpandingLink({ path, left, right, active = false }: Props) {
     </NavLink>
   );
 }
-
-export default ExpandingLink;

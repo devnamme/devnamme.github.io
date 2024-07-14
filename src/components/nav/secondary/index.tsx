@@ -1,6 +1,6 @@
 import "./index.css";
 
-function SecondaryNav() {
+export default function SecondaryNav() {
   return (
     <nav className="secondary-nav">
       <a
@@ -19,5 +19,3 @@ function SecondaryNav() {
     </nav>
   );
 }
-
-export default SecondaryNav;

@@ -5,7 +5,7 @@ import ExpandingLink from "../../expanding-link";
 import SecondaryNav from "../secondary";
 import "./index.css";
 
-function PrimaryNav() {
+export default function PrimaryNav() {
   const { pathname } = useLocation();
 
   const [activePath, setActivePath] = useState<string>("");
@@ -64,5 +64,3 @@ function PrimaryNav() {
     </div>
   );
 }
-
-export default PrimaryNav;

@@ -11,7 +11,7 @@ import AboutSection from "./sections/about";
 import WorksSection from "./sections/works";
 import { CenterOnElement, FindByPathAndScrollTo } from "./utils/scroll";
 
-function App() {
+export default function App() {
   return (
     <>
       <Routes>
@@ -130,5 +130,3 @@ function GeneralLayout() {
     </>
   );
 }
-
-export default App;
