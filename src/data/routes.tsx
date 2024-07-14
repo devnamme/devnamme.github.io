@@ -1,62 +1,77 @@
-export interface PrimaryRoute {
+export interface RouteHierarchyRoute {
+  slug: string;
   text: string;
-  sub?: { [key: string]: SecondaryRoute };
-}
-
-export interface SecondaryRoute {
-  text: string;
+  routes?: {
+    [key: string]: RouteHierarchyRoute;
+  };
 }
 
 export const RouteHierarchy: {
-  [key: string]: PrimaryRoute;
+  [key: string]: RouteHierarchyRoute;
 } = {
-  "": {
+  about: {
+    slug: "",
     text: "About",
   },
   works: {
+    slug: "works",
     text: "Works",
-    sub: {
+    routes: {
       web: {
+        slug: "web",
         text: "Web",
       },
       mobile: {
+        slug: "mobile",
         text: "Mobile",
       },
       game: {
+        slug: "game",
         text: "Game",
       },
     },
   },
   produced: {
+    slug: "produced",
     text: "Produced",
-    sub: {
+    routes: {
       articles: {
+        slug: "articles",
         text: "Articles",
       },
       videos: {
+        slug: "videos",
         text: "Videos",
       },
       issues: {
+        slug: "issues",
         text: "Issues",
       },
     },
   },
   awards: {
+    slug: "awards",
     text: "Awards",
   },
   experiences: {
+    slug: "experiences",
     text: "Experiences",
   },
 };
 
 export const NavList: {
-  [key: string]: string;
+  [key: string]: {
+    path: string;
+    slugs: string[];
+  };
 } = {
-  about: "/",
-  web: "/works/web",
-  mobile: "/works/mobile",
-  game: "/works/game",
-  articles: "/produced/articles",
-  videos: "/produced/videos",
-  issues: "/produced/issues",
+  about: { path: "/", slugs: ["about"] },
+  web: { path: "/works/web", slugs: ["works", "web"] },
+  mobile: { path: "/works/mobile", slugs: ["works", "mobile"] },
+  game: { path: "/works/game", slugs: ["works", "game"] },
+  articles: { path: "/produced/articles", slugs: ["produced", "articles"] },
+  videos: { path: "/produced/videos", slugs: ["produced", "videos"] },
+  issues: { path: "/produced/issues", slugs: ["produced", "issues"] },
+  awards: { path: "/awards", slugs: ["awards"] },
+  experiences: { path: "/experiences", slugs: ["experiences"] },
 };

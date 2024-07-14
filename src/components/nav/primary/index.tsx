@@ -1,65 +1,75 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { RouteHierarchy } from "../../../data/routes";
+import { RouteHierarchy, RouteHierarchyRoute } from "../../../data/routes";
+import { RouteState } from "../../../types/route.interface";
 import ExpandingLink from "../../expanding-link";
 import SecondaryNav from "../secondary";
 import "./index.css";
 
-export default function PrimaryNav() {
-  const { pathname } = useLocation();
+interface Props {
+  routeState: RouteState;
+  setRouteState: Function;
+}
 
-  const [activePath, setActivePath] = useState<string>("");
+export default function PrimaryNav({ routeState, setRouteState }: Props) {
+  const [storedPrimaryRoute, setStoredPrimaryRoute] =
+    useState<RouteHierarchyRoute>({
+      slug: "",
+      text: "",
+      routes: {},
+    });
 
   useEffect(() => {
-    let first = pathname.split("/")[1];
-    if (RouteHierarchy[first] != null) setActivePath(pathname);
-  }, [pathname]);
+    if (routeState.routes[routeState.primary].routes !== undefined) {
+      setStoredPrimaryRoute(RouteHierarchy[routeState.primary]);
+    }
+  }, [routeState]);
 
   return (
     <div className="primary-nav">
-      <h1 className={`title ${pathname == "/" ? "hide" : ""}`}>
+      <h1 className={`title ${routeState.routes.about.active ? "hide" : ""}`}>
         Emman Evangelista
       </h1>
 
       <SecondaryNav />
 
       <nav>
-        {Object.keys(RouteHierarchy).map((path: string, idx: number) => (
+        {Object.keys(RouteHierarchy).map((primary: string, idx: number) => (
           <ExpandingLink
             key={`nav-primary-${idx}`}
-            path={`/${path}`}
+            path={`/${primary}`}
             left={`0${idx + 1} //`}
-            right={RouteHierarchy[path].text}
-            active={activePath.split("/")[1] == path}
+            right={RouteHierarchy[primary].text}
+            active={routeState.routes[primary].active}
           />
         ))}
       </nav>
 
       <nav
         className={
-          RouteHierarchy[activePath.split("/")[1]] == null ||
-          RouteHierarchy[activePath.split("/")[1]].sub == null
+          RouteHierarchy[routeState.primary] !== undefined &&
+          RouteHierarchy[routeState.primary].routes === undefined
             ? "hide"
             : ""
         }
       >
-        {RouteHierarchy[activePath.split("/")[1]] != null &&
-          RouteHierarchy[activePath.split("/")[1]].sub != null &&
-          Object.keys(RouteHierarchy[activePath.split("/")[1]].sub!).map(
-            (second: string, idx: number) => (
-              <ExpandingLink
-                key={`nav-secondary-${idx}`}
-                path={`/${activePath.split("/")[1]}/${second}`}
-                left={`${
-                  RouteHierarchy[activePath.split("/")[1]].sub![second].text
-                } //`}
-                right=""
-                active={activePath.startsWith(
-                  `/${activePath.split("/")[1]}/${second}`
-                )}
-              />
-            )
-          )}
+        {Object.keys(storedPrimaryRoute!.routes!).map(
+          (secondary: string, idx: number) => (
+            <ExpandingLink
+              key={`nav-secondary-${idx}`}
+              path={`/${storedPrimaryRoute!.slug}/${
+                storedPrimaryRoute!.routes![secondary].slug
+              }`}
+              left={`${storedPrimaryRoute!.routes![secondary].text} //`}
+              right=""
+              active={
+                routeState.routes[routeState.primary].routes !== undefined
+                  ? routeState.routes[routeState.primary].routes![secondary]
+                      .active
+                  : false
+              }
+            />
+          )
+        )}
       </nav>
     </div>
   );

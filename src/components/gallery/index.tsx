@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import { Link } from "react-router-dom";
 import { WorksData, WorksDataGroups } from "../../data/works";
 import { WorksDataGroup } from "../../types/project.interface";
 import "./index.css";
@@ -17,10 +16,10 @@ export default function Gallery({ setSlug }: Props) {
         (key: WorksDataGroup) => (
           <div key={`group-${key}`} className="group" id={key}>
             {WorksDataGroups[key].map((slug: string, j) => (
-              <Link
-                to={`/project/${slug}`}
+              <div
                 key={`gallery-${key}-${slug}`}
                 id={slug}
+                onClick={() => setSlug(slug)}
               >
                 <img
                   className="thumbnail"
@@ -31,7 +30,7 @@ export default function Gallery({ setSlug }: Props) {
                   }`}
                   onClick={() => setSlug(slug)}
                 />
-              </Link>
+              </div>
             ))}
           </div>
         )
