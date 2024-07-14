@@ -93,6 +93,16 @@ main > * {
   opacity: 1;
 }
 
+/* scrollbar */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 @media screen and (max-width: 1200px) {
 }
 

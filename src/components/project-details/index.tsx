@@ -81,7 +81,7 @@ export default function ProjectDetails({ slug, closeDetails, project }: Props) {
               </div>
             )}
 
-            <div className="metadata">
+            <div className="metadata no-scrollbar">
               <div className="back-group link" onClick={closeDetails}>
                 <svg
                   viewBox="0 0 20 20"
