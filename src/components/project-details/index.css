@@ -83,7 +83,7 @@
 
   overflow-y: auto;
   flex: 1 1 100%;
-  max-width: 720px;
+  max-width: 640px;
 }
 
 .project-details .metadata .back-group {
