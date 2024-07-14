@@ -69,7 +69,7 @@ export const WorksData: { [key: string]: Project } = {
   },
   "vantage-magazine": {
     title: "Vantage Magazine",
-    tech: ["WordPress", "PHP"],
+    tech: ["WordPress", "PHP", "HTML", "CSS"],
     links: [
       {
         text: Labels.website,
@@ -115,7 +115,7 @@ export const WorksData: { [key: string]: Project } = {
   },
   "the-guidon": {
     title: "The GUIDON Main",
-    tech: ["WordPress", "PHP"],
+    tech: ["WordPress", "PHP", "HTML", "CSS"],
     links: [
       {
         text: Labels.website,
@@ -129,7 +129,24 @@ export const WorksData: { [key: string]: Project } = {
     media: ["thumbnail.png", "01.png", "02.png", "03.png", "04.png", "05.png"],
     content: (
       <>
-        <p>A complete redesign of the main website of The GUIDON.</p>
+        <p>
+          A complete redesign of the main website of The GUIDON, the official
+          student publication of the Ateneo de Manila University. The website
+          was first developed in 2001, undergoing major upgrades and
+          redevelopments over the course of 15 years. The previous redesign took
+          place during the mid-2010s.
+        </p>
+        <p>
+          Originally, there were plans of migrating the publication's data to
+          AWS, detaching the front-end from WordPress, and redeveloping it as a
+          NuxtJS project.
+        </p>
+        <p>
+          Eventually, I took over the entire project as the solo developer,
+          discarding the existing NuxtJS codebase and rebuilding it as a
+          WordPress theme. All in all, the project took 1.5 months to develop as
+          I had to learn PHP while building the project.
+        </p>
       </>
     ),
   },
@@ -146,7 +163,7 @@ export const WorksData: { [key: string]: Project } = {
   },
   epimetrics: {
     title: "EpiMetrics, Inc.",
-    tech: ["WordPress", "PHP"],
+    tech: ["WordPress", "PHP", "HTML", "CSS"],
     links: [
       {
         text: Labels.website,
@@ -241,7 +258,7 @@ export const WorksData: { [key: string]: Project } = {
   },
   "flood-guard-calbayog": {
     title: "Flood Guard Calbayog",
-    tech: ["Ruby on Rails", "MySQL", "ReactJS"],
+    tech: ["Ruby on Rails", "MySQL", "ReactJS", "Tailwind"],
     links: [],
     media: ["thumbnail.png"],
     content: (
@@ -251,6 +268,23 @@ export const WorksData: { [key: string]: Project } = {
           flooding risks and its related heatmaps for the Local Government Unit
           (LGU) of Calbayog, Samar in the Philippines.
         </p>
+      </>
+    ),
+  },
+  "project-management": {
+    title: "Project Management",
+    tech: ["Firebase", "Vite", "ReactJS", "TypeScript", "Tailwind"],
+    links: [
+      {
+        text: Labels.website,
+        url: "https://project-management-pdf.vercel.app",
+      },
+    ],
+    media: ["01.png", "02.png", "03.png", "04.png", "05.png", "06.png"],
+    thumbnail: "01.png",
+    content: (
+      <>
+        <p>Hello world</p>
       </>
     ),
   },
