@@ -108,7 +108,8 @@ export const WorksData: { [key: string]: Project } = {
           interactive and immersive articles of the publication. The launch of
           the newly developed website prompted the reform of internal processes,
           with the usage of Google Sheets as the primary makeshift database
-          being retired and a new Headless CMS being created for scalability.
+          being retired and a new headless content management system (CMS) being
+          created for scalability.
         </p>
       </>
     ),
@@ -258,7 +259,7 @@ export const WorksData: { [key: string]: Project } = {
   },
   "flood-guard-calbayog": {
     title: "Flood Guard Calbayog",
-    tech: ["Ruby on Rails", "MySQL", "ReactJS", "Tailwind"],
+    tech: ["Ruby on Rails", "MySQL", "ReactJS", "Tailwind CSS"],
     links: [],
     media: ["thumbnail.png"],
     content: (
@@ -273,7 +274,7 @@ export const WorksData: { [key: string]: Project } = {
   },
   "project-management": {
     title: "Project Management",
-    tech: ["Firebase", "Vite", "ReactJS", "TypeScript", "Tailwind"],
+    tech: ["Firebase", "Vite", "ReactJS", "TypeScript", "Tailwind CSS"],
     links: [
       {
         text: Labels.website,
@@ -313,11 +314,12 @@ export const WorksDataGroups: {
     "the-guidon",
     "talab-2023",
     "epimetrics",
-    "year-end-gallery-2023",
     "dead-end",
+    "year-end-gallery-2023",
     "uaap-85-primer-1",
-    "a-house-divided",
+    // "a-house-divided",
     "flood-guard-calbayog",
+    "project-management",
   ],
   mobile: [
     // "beadle"
