@@ -26,8 +26,6 @@ export default function PrimaryNav({ routeState, setRouteState }: Props) {
 
   return (
     <div className="primary-nav">
-      <SecondaryNav />
-
       <nav>
         {Object.keys(RouteHierarchy).map((primary: string, idx: number) => (
           <ExpandingLink
@@ -71,6 +69,8 @@ export default function PrimaryNav({ routeState, setRouteState }: Props) {
           )
         )}
       </nav>
+
+      <SecondaryNav />
     </div>
   );
 }

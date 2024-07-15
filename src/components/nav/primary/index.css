@@ -29,10 +29,16 @@
   max-height: 0;
 }
 
+.primary-nav nav.hide + .secondary-nav {
+  margin-top: -16px;
+}
+
 .primary-nav .secondary-nav {
   position: static;
   padding: 0;
   display: none;
+
+  transition: 0.3s ease-out 0.2s;
 }
 
 @media screen and (max-width: 1200px) {
