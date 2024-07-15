@@ -16,6 +16,11 @@
   min-width: 100vw;
 }
 
+.gallery > div {
+  width: fit-content;
+  height: fit-content;
+}
+
 .gallery .thumbnail {
   height: 45vh;
   width: auto;
