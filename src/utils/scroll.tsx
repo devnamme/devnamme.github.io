@@ -26,8 +26,12 @@ export const FindByPathAndScrollTo = (path: string) => {
 };
 
 export const CenterOnElement = (target: HTMLElement, main: HTMLElement) => {
+  const parent = target.parentNode as HTMLElement;
+
   let left =
-    target.offsetLeft -
+    parent.offsetLeft +
+    (target.getBoundingClientRect().left -
+      parent.getBoundingClientRect().left) -
     (window.innerWidth - target.getBoundingClientRect().width) / 2;
 
   ScrollTo(left, main);
