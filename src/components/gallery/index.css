@@ -56,6 +56,12 @@
     padding-right: 128px;
   }
 
+  .gallery .group > div {
+    width: 80vw;
+    height: auto;
+    height: calc(80vw / 16 * 9);
+  }
+
   .gallery .thumbnail {
     width: 80vw;
     height: auto;
@@ -67,6 +73,12 @@
   .gallery {
     column-gap: 64px;
     padding-right: 0;
+  }
+
+  .gallery .group > div {
+    width: auto;
+    width: calc(20vh / 9 * 16);
+    height: 20vh;
   }
 
   .gallery .thumbnail,
