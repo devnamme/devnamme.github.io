@@ -9,24 +9,6 @@
   left: 0;
 }
 
-.primary-nav .title {
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: var(--title-font-size);
-  line-height: 1;
-
-  transition: 0.5s ease-in-out;
-  overflow: clip;
-
-  max-height: var(--title-font-size);
-}
-
-.primary-nav .title.hide {
-  max-height: 0;
-  margin-bottom: -16px;
-  opacity: 0;
-}
-
 .primary-nav nav {
   display: flex;
   flex-flow: row wrap;

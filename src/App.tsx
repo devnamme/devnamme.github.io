@@ -163,6 +163,15 @@ function GeneralLayout() {
   return (
     <>
       <main id="main" ref={mainRef}>
+        <div
+          className={`main-title-container ${
+            routeState.routes.about.active ? "hide" : ""
+          }`}
+        >
+          <p className="subtitle">Full-stack developer</p>
+          <h1 className="title">Emman Evangelista</h1>
+        </div>
+
         <PrimaryNav routeState={routeState} setRouteState={setRouteState} />
         <SecondaryNav />
 

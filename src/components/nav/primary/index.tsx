@@ -26,10 +26,6 @@ export default function PrimaryNav({ routeState, setRouteState }: Props) {
 
   return (
     <div className="primary-nav">
-      <h1 className={`title ${routeState.routes.about.active ? "hide" : ""}`}>
-        Emman Evangelista
-      </h1>
-
       <SecondaryNav />
 
       <nav>
