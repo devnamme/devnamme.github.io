@@ -4,6 +4,8 @@
   display: flex;
   flex-flow: row nowrap;
   column-gap: 256px;
+
+  padding-right: 256px;
 }
 
 .gallery .group {
@@ -26,6 +28,11 @@
   cursor: pointer;
 }
 
+.gallery .spacer {
+  display: none;
+  aspect-ratio: 16 / 9;
+}
+
 @media screen and (max-width: 1200px) {
 }
 
@@ -35,6 +42,7 @@
 @media screen and (max-width: 768px) {
   .gallery {
     column-gap: 128px;
+    padding-right: 128px;
   }
 
   .gallery .thumbnail {
@@ -46,9 +54,12 @@
 @media screen and (max-width: 576px) {
   .gallery {
     column-gap: 64px;
+    padding-right: 0;
   }
 
-  .gallery .thumbnail {
+  .gallery .thumbnail,
+  .gallery .spacer {
+    display: block;
     height: 20vh;
     width: auto;
   }

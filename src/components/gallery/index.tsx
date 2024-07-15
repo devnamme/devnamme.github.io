@@ -31,6 +31,10 @@ export default function Gallery({ setSlug }: Props) {
               />
             </div>
           ))}
+
+          {WorksDataGroups[key].length % 2 == 0 ? (
+            <div className="spacer" />
+          ) : null}
         </div>
       ))}
     </div>

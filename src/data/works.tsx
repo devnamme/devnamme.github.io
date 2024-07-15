@@ -3,6 +3,7 @@ import { Project } from "../types/project.interface";
 export const Labels = {
   website: "Open website",
   github: "View on GitHub",
+  facebook: "View Facebook page",
 };
 
 export const WorksData: { [key: string]: Project } = {
@@ -159,7 +160,16 @@ export const WorksData: { [key: string]: Project } = {
     media: ["thumbnail.png"],
     content: (
       <>
-        <p>Hello world</p>
+        <p>
+          Every year, Ateneo de Manila University holds Talakayang Alay sa Bayan
+          (TALAB)—a series of talks, workshops, and events that are tailored fit
+          for the student community.
+        </p>
+        <p>
+          As every event can only have a limited number of slots, an enlistment
+          system similar to the university's regular class enlistment system is
+          being implemented this year.
+        </p>
       </>
     ),
   },
@@ -171,11 +181,24 @@ export const WorksData: { [key: string]: Project } = {
         text: Labels.website,
         url: "https://epimetrics.com.ph",
       },
+      {
+        text: Labels.facebook,
+        url: "https://www.facebook.com/epimetricsph/",
+      },
     ],
     media: ["thumbnail.png"],
     content: (
       <>
-        <p>Hello world</p>
+        <p>
+          EpiMetrics, Inc. is a local health research institute in the
+          Philippines partnering with numerous local non-governmental
+          organizations (NGOs), national government agencies, and international
+          institutions.
+        </p>
+        <p>
+          A user-friendly content management system has been requested in order
+          for the organization to regularly update the content on their website.
+        </p>
       </>
     ),
   },
@@ -195,7 +218,11 @@ export const WorksData: { [key: string]: Project } = {
     media: ["thumbnail.png"],
     content: (
       <>
-        <p>Hello world</p>
+        <p>
+          As the academic year of 2023–2024 comes to an end, the publication
+          revisits various events experienced by the Ateneo community following
+          the return of regular onsite classes post-lockdown.
+        </p>
       </>
     ),
   },
@@ -224,48 +251,54 @@ export const WorksData: { [key: string]: Project } = {
     content: (
       <>
         <p>
-          Dead End is an interactive article that features the hardships of
-          Filipino commuters in their day to day lives.
+          Dead End: The Commuter Experience is an interactive article that
+          features the hardships of Filipino commuters in an attempt to uncover
+          issues both in the local and the national scale.
         </p>
       </>
     ),
   },
-  "uaap-85-primer-1": {
-    title: "UAAP Season 85 Primer Volume 1",
+  "uaap-85-digital-primer": {
+    title: "UAAP Season 85 Digital Primer",
     tech: ["WordPress", "PHP", "HTML", "CSS"],
     links: [
       {
-        text: Labels.website,
+        text: "View Volume 1",
         url: "https://theguidon.com/uaap-85-primer-volume-1/",
       },
+      {
+        text: "View Volume 2",
+        url: "https://theguidon.com/uaap-85-primer-volume-2/",
+      },
     ],
-    media: ["thumbnail.png"],
+    media: ["01.png", "02.png", "03.png", "04.png"],
+    thumbnail: "01.png",
     content: (
       <>
         <p>Hello world</p>
       </>
     ),
   },
-  "a-house-divided": {
-    title: "A House Divided",
-    tech: ["VueJS"],
-    links: [
-      {
-        text: Labels.website,
-        url: "https://interactive.theguidon.com/2022/10/a-house-divided/",
-      },
-      {
-        text: Labels.github,
-        url: "https://github.com/theguidon/a-house-divided",
-      },
-    ],
-    media: ["thumbnail.png"],
-    content: (
-      <>
-        <p>Hello world</p>
-      </>
-    ),
-  },
+  // "a-house-divided": {
+  //   title: "A House Divided",
+  //   tech: ["VueJS"],
+  //   links: [
+  //     {
+  //       text: Labels.website,
+  //       url: "https://interactive.theguidon.com/2022/10/a-house-divided/",
+  //     },
+  //     {
+  //       text: Labels.github,
+  //       url: "https://github.com/theguidon/a-house-divided",
+  //     },
+  //   ],
+  //   media: ["thumbnail.png"],
+  //   content: (
+  //     <>
+  //       <p>Hello world</p>
+  //     </>
+  //   ),
+  // },
   "flood-guard-calbayog": {
     title: "Flood Guard Calbayog",
     tech: ["Ruby on Rails", "MySQL", "ReactJS", "Tailwind CSS"],
@@ -298,17 +331,17 @@ export const WorksData: { [key: string]: Project } = {
       </>
     ),
   },
-  beadle: {
-    title: "Beadle: AdMU Student App",
-    tech: ["Flutter", "Dart"],
-    links: [],
-    media: ["thumbnail.png"],
-    content: (
-      <>
-        <p>Hello world</p>
-      </>
-    ),
-  },
+  // beadle: {
+  //   title: "Beadle: AdMU Student App",
+  //   tech: ["Flutter", "Dart"],
+  //   links: [],
+  //   media: ["thumbnail.png"],
+  //   content: (
+  //     <>
+  //       <p>Hello world</p>
+  //     </>
+  //   ),
+  // },
   "ma10mon-cs": {
     title: "Ma10mon: CS",
     tech: ["HTML", "JavaScript"],
@@ -326,13 +359,25 @@ export const WorksData: { [key: string]: Project } = {
     thumbnail: "thumbnail.jpg",
     content: (
       <>
-        <p>Hello world</p>
+        <p>
+          Set in an alternate universe, three daring students attempt to defeat
+          an evil being.
+        </p>
+        <p>
+          Ma10mon: CS was originally submitted as an academic requirement. The
+          game was built using HTML5's canvas, with every element being drawn by
+          one of my groupmates.
+        </p>
+        <p>
+          An extensive amount of JavaScript knowledge was required in order to
+          figure out which scenes and which frames to draw.
+        </p>
       </>
     ),
   },
   "race-to-twelve": {
     title: "Race to Twelve",
-    tech: ["C++"],
+    tech: ["C++", "OpenGL"],
     links: [
       {
         text: Labels.github,
@@ -342,7 +387,15 @@ export const WorksData: { [key: string]: Project } = {
     media: ["thumbnail.png"],
     content: (
       <>
-        <p>Hello world</p>
+        <p>
+          The player and the game AI each take turns stacking numbers from 1 to
+          3. The first one to get a total of 12 blocks wins the round.
+        </p>
+        <p>
+          Race to Twelve was originally submitted as an academic requirement for
+          one of my Senior High School classes for learning C++. OpenGL was used
+          in order to efficiently draw each frame.
+        </p>
       </>
     ),
   },
@@ -354,7 +407,10 @@ export const WorksData: { [key: string]: Project } = {
     thumbnail: "thumbnail.jpg",
     content: (
       <>
-        <p>Hello world</p>
+        <p>
+          As a gravity-defying slimeball, the player must try to survive for as
+          long as they can while avoiding spikes.
+        </p>
       </>
     ),
   },
@@ -397,7 +453,7 @@ export const WorksDataGroups: {
     "epimetrics",
     "dead-end",
     "year-end-gallery-2023",
-    "uaap-85-primer-1",
+    "uaap-85-digital-primer",
     // "a-house-divided",
     "flood-guard-calbayog",
     "project-management",
