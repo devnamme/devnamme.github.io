@@ -13,7 +13,7 @@
   flex-flow: row nowrap;
   column-gap: 24px;
 
-  min-width: 100vw;
+  width: fit-content;
 }
 
 .gallery .group > div {
