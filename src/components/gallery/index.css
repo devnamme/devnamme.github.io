@@ -24,9 +24,10 @@
 .gallery .thumbnail {
   height: 45vh;
   width: auto;
+  width: calc(45vh / 9 * 16);
   display: block;
   border-radius: 4px;
-  aspect-ratio: 16 / 9;
+  /* aspect-ratio: 16 / 9; */
   object-fit: cover;
   object-position: left center;
 
@@ -35,7 +36,7 @@
 
 .gallery .spacer {
   display: none;
-  aspect-ratio: 16 / 9;
+  /* aspect-ratio: 16 / 9; */
 }
 
 @media screen and (max-width: 1200px) {
@@ -52,6 +53,7 @@
 
   .gallery .thumbnail {
     height: auto;
+    height: calc(80vw / 16 * 9);
     width: 80vw;
   }
 }
@@ -67,6 +69,7 @@
     display: block;
     height: 20vh;
     width: auto;
+    width: calc(20vh / 9 * 16);
   }
 
   .gallery .group {
