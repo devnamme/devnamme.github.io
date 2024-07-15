@@ -112,7 +112,7 @@ main > * {
   transition: 0.5s ease-in-out;
   overflow: clip;
 
-  /* max-height: var(--title-font-size); */
+  max-height: var(--title-font-size);
 
   display: flex;
   flex-flow: row nowrap;
