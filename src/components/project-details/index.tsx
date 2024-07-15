@@ -119,20 +119,21 @@ export default function ProjectDetails({ slug, closeDetails, project }: Props) {
                   </div>
                 )}
 
-                {activeProject.links.length > 0 && (
-                  <div className="links">
-                    {activeProject.links.map((link, idx) => (
-                      <a
-                        key={`project-link-${idx}`}
-                        className="link"
-                        href={link.url}
-                        target="_blank"
-                      >
-                        {link.text} //
-                      </a>
-                    ))}
-                  </div>
-                )}
+                {activeProject.links !== undefined &&
+                  activeProject.links.length > 0 && (
+                    <div className="links">
+                      {activeProject.links.map((link, idx) => (
+                        <a
+                          key={`project-link-${idx}`}
+                          className="link"
+                          href={link.url}
+                          target="_blank"
+                        >
+                          {link.text} //
+                        </a>
+                      ))}
+                    </div>
+                  )}
               </div>
 
               {activeProject.content != null && (

@@ -1,7 +1,7 @@
 export interface Project {
   title: string;
   tech: string[];
-  links: {
+  links?: {
     text: string;
     url: string;
   }[];

@@ -30,7 +30,6 @@ export const WorksData: { [key: string]: Project } = {
   // beadle: {
   //   title: "Beadle: AdMU Student App",
   //   tech: ["Flutter", "Dart"],
-  //   links: [],
   //   media: ["thumbnail.png"],
   //   content: (
   //     <>
@@ -102,25 +101,32 @@ export const WorksData: { [key: string]: Project } = {
   "fuji-animation": {
     title: "Mt. Fuji Animation",
     tech: ["Java"],
-    links: [],
     media: ["thumbnail.png"],
     content: (
       <>
-        <p>Hello world</p>
+        <p>
+          The Mt. Fuji Animation was originally submitted as an academic
+          requirement for one of my early Java classes. Each element in the
+          animation was manually crafted using Java Graphics without the need
+          for any third-party software.
+        </p>
       </>
     ),
   },
   "flood-guard-calbayog": {
     title: "Flood Guard Calbayog",
     tech: ["Ruby on Rails", "MySQL", "ReactJS", "Tailwind CSS"],
-    links: [],
     media: ["thumbnail.png"],
     content: (
       <>
         <p>
-          A proof-of-concept web application that efficiently calculates
-          flooding risks and its related heatmaps for the Local Government Unit
-          (LGU) of Calbayog, Samar in the Philippines.
+          Flood Guard Calbayog is a web application that efficiently calculates
+          flooding risks and creates heatmaps.
+        </p>
+        <p>
+          I was outsourced as a freelance developer by Cloudband Solutions in
+          order to create this project for the Local Government Unit (LGU) of
+          Calbayog, Samar in the Philippines.
         </p>
       </>
     ),
@@ -160,7 +166,14 @@ export const WorksData: { [key: string]: Project } = {
   },
   "project-management": {
     title: "Project Management",
-    tech: ["Firebase", "Vite", "ReactJS", "TypeScript", "Tailwind CSS"],
+    tech: [
+      "Firebase Authentication",
+      "Firestore",
+      "Vite",
+      "ReactJS",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
     links: [
       {
         text: Labels.website,
@@ -171,7 +184,15 @@ export const WorksData: { [key: string]: Project } = {
     thumbnail: "01.png",
     content: (
       <>
-        <p>Hello world</p>
+        <p>
+          Project Management is a small web application that lets users
+          efficiently track the progress of multiple projects and tasks by
+          creating realtime reports.
+        </p>
+        <p>
+          All elements were made from scratch, including the charts and graphs
+          that are shown on the subpages.
+        </p>
       </>
     ),
   },
@@ -202,18 +223,25 @@ export const WorksData: { [key: string]: Project } = {
   "skiulas-chamber": {
     title: "Skiula's Chamber",
     tech: ["Java"],
-    links: [],
     media: ["thumbnail.png"],
     content: (
       <>
-        <p>Hello world</p>
+        <p>
+          Skiula, the evil skeleton boss, has trapped these players inside his
+          castle. Players must survive for a total of three minutes in order to
+          win.
+        </p>
+        <p>
+          Skiula's Chamber was originally submitted as an academic requirement.
+          The goal was to create a multiplayer game using Java Networking and
+          Sockets.
+        </p>
       </>
     ),
   },
   slimed: {
     title: "Slime'd",
     tech: ["Arduino", "C++"],
-    links: [],
     media: ["thumbnail.jpg"],
     thumbnail: "thumbnail.jpg",
     content: (
@@ -222,13 +250,24 @@ export const WorksData: { [key: string]: Project } = {
           As a gravity-defying slimeball, the player must try to survive for as
           long as they can while avoiding spikes.
         </p>
+        <p>
+          Slime'D takes inspiration from Flappy Bird that was once dominating
+          the mobile game market in the 2010s. It was created for the 2019 I.T.
+          and Robotics Fair in Westfield Science-Oriented School. A custom-made
+          console-like device was created with Arduino parts.
+        </p>
       </>
     ),
   },
   "talab-2023": {
     title: "TALAB 2023",
     tech: ["Django", "HTML", "CSS"],
-    links: [],
+    links: [
+      {
+        text: Labels.facebook,
+        url: "https://www.facebook.com/AteneoTALAB",
+      },
+    ],
     media: ["thumbnail.png"],
     content: (
       <>
@@ -358,11 +397,13 @@ export const WorksData: { [key: string]: Project } = {
       <>
         <p>
           A complete redesign of The GUIDON Interactive, the homepage of all
-          interactive and immersive articles of the publication. The launch of
-          the newly developed website prompted the reform of internal processes,
-          with the usage of Google Sheets as the primary makeshift database
-          being retired and a new headless content management system (CMS) being
-          created for scalability.
+          interactive and immersive articles of the publication.
+        </p>
+        <p>
+          The launch of the newly developed website prompted the reform of
+          internal processes, with the usage of Google Sheets as the primary
+          makeshift database being retired and a new headless content management
+          system (CMS) being created for scalability.
         </p>
       </>
     ),
@@ -384,7 +425,15 @@ export const WorksData: { [key: string]: Project } = {
     thumbnail: "01.png",
     content: (
       <>
-        <p>Hello world</p>
+        <p>
+          The UAAP Season 85 Primers are physical, printed magazines released by
+          The GUIDON during the start of a semester to showcase Ateneo's teams
+          for the season.
+        </p>
+        <p>
+          Digital Primers are also being released every semester as animated,
+          online counterparts of these physical primers.
+        </p>
       </>
     ),
   },
