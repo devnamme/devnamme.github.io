@@ -36,7 +36,11 @@ export default function PrimaryNav({ routeState, setRouteState }: Props) {
         {Object.keys(RouteHierarchy).map((primary: string, idx: number) => (
           <ExpandingLink
             key={`nav-primary-${idx}`}
-            path={`/${primary}`}
+            path={`/${
+              RouteHierarchy[primary].override !== undefined
+                ? RouteHierarchy[primary].override
+                : primary
+            }`}
             left={`0${idx + 1} //`}
             right={RouteHierarchy[primary].text}
             active={routeState.routes[primary].active}

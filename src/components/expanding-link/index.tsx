@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { FindByPathAndScrollTo } from "../../utils/scroll";
 import "./index.css";
 
@@ -16,13 +15,12 @@ export default function ExpandingLink({
   active = false,
 }: Props) {
   return (
-    <Link
+    <p
       className={`expanding-link link ${active ? "active" : ""}`}
-      to={path}
       onClick={() => FindByPathAndScrollTo(path)}
     >
-      <p className="left">{left}</p>
-      <p className="right">{right}</p>
-    </Link>
+      <span className="left">{left}</span>
+      <span className="right">{right}</span>
+    </p>
   );
 }

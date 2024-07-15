@@ -3,6 +3,8 @@
   display: flex;
   flex-flow: row nowrap;
   column-gap: 6px;
+
+  cursor: pointer;
 }
 
 .expanding-link .right {

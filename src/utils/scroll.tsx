@@ -16,7 +16,7 @@ export const ScrollTo = (left: number, main: HTMLElement) => {
 
 export const FindByPathAndScrollTo = (path: string) => {
   Object.keys(NavList).forEach((id: string) => {
-    if (NavList[id] == path) {
+    if (NavList[id].path === path) {
       let el = document.getElementById(id);
       let main = document.getElementById("main")!;
 

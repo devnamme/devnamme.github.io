@@ -1,5 +1,6 @@
 export interface RouteHierarchyRoute {
   slug: string;
+  override?: string;
   text: string;
   routes?: {
     [key: string]: RouteHierarchyRoute;
@@ -11,6 +12,7 @@ export const RouteHierarchy: {
 } = {
   about: {
     slug: "",
+    override: "",
     text: "About",
   },
   works: {
@@ -66,6 +68,7 @@ export const NavList: {
   };
 } = {
   about: { path: "/", slugs: ["about"] },
+  works: { path: "/works", slugs: ["works"] },
   web: { path: "/works/web", slugs: ["works", "web"] },
   // mobile: { path: "/works/mobile", slugs: ["works", "mobile"] },
   game: { path: "/works/game", slugs: ["works", "game"] },
