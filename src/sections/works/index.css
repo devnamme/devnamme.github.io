@@ -1,9 +1,5 @@
 #works {
-  /* height: calc(100% - 144px); */
-
-  /* margin-top: 64px; */
   display: grid;
-  /* grid-template-rows: 1fr 80px; */
   grid-template-rows: 1fr;
   row-gap: 56px;
 }
