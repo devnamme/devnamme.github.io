@@ -1,5 +1,5 @@
-import Gallery from "../../components/gallery";
-import "./index.css";
+import Gallery from "../../components/gallery/gallery";
+import "./works.css";
 
 interface Props {
   setSlug: Function;

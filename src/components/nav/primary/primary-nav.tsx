@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { RouteHierarchy, RouteHierarchyRoute } from "../../../data/routes";
 import { RouteState } from "../../../types/route.interface";
-import ExpandingLink from "../../expanding-link";
-import SecondaryNav from "../secondary";
-import "./index.css";
+import ExpandingLink from "../../expanding-link/expanding-link";
+import SecondaryNav from "../secondary/secondary-nav";
+import "./primary-nav.css";
 
 interface Props {
   routeState: RouteState;

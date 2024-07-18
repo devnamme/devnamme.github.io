@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { WorksData, WorksDataGroups } from "../../data/works";
 import { WorksDataGroup } from "../../types/project.interface";
-import "./index.css";
+import "./gallery.css";
 
 interface Props {
   setSlug: Function;

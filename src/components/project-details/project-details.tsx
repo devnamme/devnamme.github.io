@@ -1,6 +1,6 @@
 import { MouseEventHandler, useEffect, useRef, useState } from "react";
 import { Project } from "../../types/project.interface";
-import "./index.css";
+import "./project-details.css";
 
 interface Props {
   slug: string | null;

@@ -1,4 +1,4 @@
-import "./index.css";
+import "./about.css";
 
 export default function AboutSection() {
   return (
