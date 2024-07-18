@@ -1,5 +1,5 @@
 import { FindByPathAndScrollTo } from "../../utils/scroll";
-import "./index.css";
+import "./expanding-link.css";
 
 interface Props {
   path: string;

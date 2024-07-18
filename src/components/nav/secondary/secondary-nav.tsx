@@ -1,4 +1,4 @@
-import "./index.css";
+import "./secondary-nav.css";
 
 export default function SecondaryNav() {
   return (

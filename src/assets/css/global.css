@@ -70,6 +70,10 @@ main > * {
   flex-shrink: 0;
 }
 
+.no-space {
+  white-space: nowrap;
+}
+
 /* default */
 .link {
   font-size: var(--link-font-size);
