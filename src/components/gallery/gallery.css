@@ -9,8 +9,10 @@
 }
 
 #gallery .group {
-  display: flex;
-  flex-flow: row nowrap;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
   column-gap: 24px;
 
   width: fit-content;
@@ -21,16 +23,12 @@
   width: auto;
   width: calc(45vh / 9 * 16);
   height: 45vh;
-
-  /* width: fit-content;
-  height: fit-content; */
 }
 
 #gallery .thumbnail {
   width: auto;
   width: calc(45vh / 9 * 16);
   height: 45vh;
-  /* aspect-ratio: 16 / 9; */
 
   display: block;
   border-radius: 4px;
@@ -42,7 +40,6 @@
 
 #gallery .spacer {
   display: none;
-  /* aspect-ratio: 16 / 9; */
 }
 
 @media screen and (max-width: 1200px) {
@@ -73,7 +70,7 @@
 @media screen and (max-width: 576px) {
   #gallery {
     column-gap: 64px;
-    padding-right: 0;
+    padding-right: 64px;
   }
 
   #gallery .group .thumbnail-wrapper {
