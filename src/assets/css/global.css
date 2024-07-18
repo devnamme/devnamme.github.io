@@ -13,6 +13,7 @@ body {
 
   --body-l-font-size: 40px;
   --body-font-size: 20px;
+  --body-s-font-size: 18px;
 
   --dark-bg-primary: #121212;
   --dark-bg-light: #1a1a1a;
@@ -101,6 +102,30 @@ main > * {
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+/* intro instruction */
+.intro-instruction {
+  position: fixed;
+  bottom: var(--general-padding-y);
+  left: 0;
+  right: 0;
+
+  font-size: var(--body-s-font-size);
+  font-weight: 200;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+
+  max-height: var(--body-s-font-size);
+  overflow: clip;
+
+  transition: 0.5s ease-in-out;
+}
+
+.intro-instruction.hide {
+  max-height: 0;
+  opacity: 0;
 }
 
 /* title */

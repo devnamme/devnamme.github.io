@@ -23,5 +23,11 @@
   font-size: var(--body-l-font-size);
   font-weight: 300;
   text-align: center;
-  max-width: 640px;
+  max-width: 720px;
+}
+
+#about .instruction {
+  font-size: var(--body-s-font-size);
+  font-weight: 200;
+  text-transform: uppercase;
 }

@@ -163,12 +163,20 @@ function GeneralLayout() {
   return (
     <>
       <main id="main" ref={mainRef}>
+        <p
+          className={`intro-instruction ${
+            routeState.routes.about.active ? "" : "hide"
+          }`}
+        >
+          Scroll down to view projects
+        </p>
+
         <div
           className={`main-title-container ${
             routeState.routes.about.active ? "hide" : ""
           }`}
         >
-          <p className="subtitle">Full-stack developer</p>
+          <p className="subtitle">Software developer</p>
           <h1 className="title">Emman Evangelista</h1>
         </div>
 
