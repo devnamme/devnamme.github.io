@@ -1,4 +1,4 @@
-import { MouseEventHandler, useEffect, useRef, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 import { Project } from "../../types/project.interface";
 import "./project-details.css";
 
@@ -12,7 +12,6 @@ export default function ProjectDetails({ slug, closeDetails, project }: Props) {
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [mediaPage, setMediaPage] = useState(0);
 
   useEffect(() => {
