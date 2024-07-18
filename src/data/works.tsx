@@ -6,6 +6,37 @@ export const Labels = {
   facebook: "View Facebook page",
 };
 
+export const WorksDataGroups: {
+  web: string[];
+  mobile: string[];
+  game: string[];
+} = {
+  web: [
+    "the-guidon-archives",
+    "vantage-magazine",
+    "the-guidon-interactive",
+    "the-guidon",
+    "talab-2023",
+    "epimetrics",
+    "dead-end",
+    "year-end-gallery-2023",
+    "uaap-85-digital-primer",
+    // "a-house-divided",
+    "flood-guard-calbayog",
+    "project-management",
+  ],
+  mobile: [
+    // "beadle"
+  ],
+  game: [
+    "ma10mon-cs",
+    "race-to-twelve",
+    // "slimed",
+    "skiulas-chamber",
+    "fuji-animation",
+  ],
+};
+
 export const WorksData: { [key: string]: Project } = {
   // "a-house-divided": {
   //   title: "A House Divided",
@@ -485,35 +516,4 @@ export const WorksData: { [key: string]: Project } = {
       </>
     ),
   },
-};
-
-export const WorksDataGroups: {
-  web: string[];
-  mobile: string[];
-  game: string[];
-} = {
-  web: [
-    "the-guidon-archives",
-    "vantage-magazine",
-    "the-guidon-interactive",
-    "the-guidon",
-    "talab-2023",
-    "epimetrics",
-    "dead-end",
-    "year-end-gallery-2023",
-    "uaap-85-digital-primer",
-    // "a-house-divided",
-    "flood-guard-calbayog",
-    "project-management",
-  ],
-  mobile: [
-    // "beadle"
-  ],
-  game: [
-    "ma10mon-cs",
-    "race-to-twelve",
-    // "slimed",
-    "skiulas-chamber",
-    "fuji-animation",
-  ],
 };

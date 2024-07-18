@@ -6,8 +6,8 @@ export default function AboutSection() {
       <h1 className="title">Emman Evangelista</h1>
       <p className="text">
         I am a Manila-based software developer who started programming at the
-        age of 11. Through tech, I build solutions centered around user
-        experience.
+        age of 11. Through tech, I build solutions centered around{" "}
+        <span className="no-space">user experience</span>.
       </p>
     </section>
   );
