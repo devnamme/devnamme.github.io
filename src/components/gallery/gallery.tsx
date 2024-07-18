@@ -11,13 +11,14 @@ export default function Gallery({ setSlug }: Props) {
   const galleryRef = useRef(null);
 
   return (
-    <div className="gallery" ref={galleryRef}>
+    <div id="gallery" ref={galleryRef}>
       {(["web", "game"] as WorksDataGroup[]).map((key: WorksDataGroup) => (
         <div key={`group-${key}`} className="group" id={key}>
           {WorksDataGroups[key].map((slug: string, j) => (
             <div
               key={`gallery-${key}-${slug}`}
               id={slug}
+              className="thumbnail-wrapper"
               onClick={() => setSlug(slug)}
             >
               <img

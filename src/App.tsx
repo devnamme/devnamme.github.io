@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import "./assets/css/fonts.css";
 import "./assets/css/global.css";
+import Gallery from "./components/gallery/gallery";
 import PrimaryNav from "./components/nav/primary/primary-nav";
 import SecondaryNav from "./components/nav/secondary/secondary-nav";
 import ProjectDetails from "./components/project-details/project-details";
 import { NavList } from "./data/routes";
 import { WorksData } from "./data/works";
 import AboutSection from "./sections/about/about";
-import WorksSection from "./sections/works/works";
 import { RouteState } from "./types/route.interface";
 import { CenterOnElement, FindByPathAndScrollTo } from "./utils/scroll";
 
@@ -184,7 +184,7 @@ function GeneralLayout() {
         <SecondaryNav />
 
         <AboutSection />
-        <WorksSection setSlug={setSlug} />
+        <Gallery setSlug={setSlug} />
 
         <ProjectDetails
           project={slug == null ? null : WorksData[slug]}
