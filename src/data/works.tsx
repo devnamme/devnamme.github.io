@@ -505,7 +505,8 @@ export const WorksData: { [key: string]: Project } = {
         url: "https://github.com/theguidon/year-end-gallery-2023",
       },
     ],
-    media: ["thumbnail.png"],
+    media: ["01.png", "02.png", "03.png", "04.png", "05.png", "06.png"],
+    thumbnail: "01.png",
     content: (
       <>
         <p>
