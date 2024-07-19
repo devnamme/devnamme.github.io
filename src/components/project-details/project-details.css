@@ -55,7 +55,7 @@
   row-gap: 24px;
   align-items: center;
 
-  overflow: clip;
+  /* overflow: clip; */
 }
 
 .project-details .media.solo {
@@ -322,7 +322,7 @@
 
   .project-details .media {
     max-width: unset;
-    flex: 0 0 0;
+    flex: 1 1 0;
     padding: 24px var(--general-padding-x);
   }
 
