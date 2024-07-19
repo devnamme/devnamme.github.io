@@ -38,6 +38,12 @@ export default function ProjectDetails({ slug, closeDetails, project }: Props) {
                   src={`/media/${activeSlug}/${activeProject.media[mediaPage]}`}
                 />
 
+                <div className="page">
+                  <span>
+                    {mediaPage + 1}/{activeProject.media.length}
+                  </span>
+                </div>
+
                 <button
                   className={`edge left ${mediaPage === 0 ? "hide" : ""}`}
                   onClick={() => {

@@ -54,7 +54,30 @@
   row-gap: 24px;
   align-items: center;
 
-  /* overflow: hidden; */
+  overflow: clip;
+}
+
+.project-details .media .page {
+  background-color: white;
+  padding: 4px 12px;
+  border-radius: 100px;
+  box-shadow: 0 0 12px #00000040;
+
+  color: black;
+  line-height: 1;
+  font-size: var(--label-font-size);
+
+  position: absolute;
+  bottom: calc(24px + 8px);
+  transform: translate(0, calc(100% + 8px + 24px));
+
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.project-details .media:hover .page {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 
 .project-details .media .selected-media {
@@ -85,7 +108,7 @@
 
   cursor: pointer;
 
-  transition: 0.3s ease-in-out;
+  transition: 0.3s;
 }
 
 .project-details .media .edge.hide {
