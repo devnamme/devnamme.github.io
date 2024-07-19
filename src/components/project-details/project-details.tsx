@@ -32,13 +32,21 @@ export default function ProjectDetails({ slug, closeDetails, project }: Props) {
         {activeProject != null && (
           <>
             {activeProject.media.length > 0 && (
-              <div className="media">
+              <div
+                className={`media ${
+                  activeProject.media.length === 1 ? "solo" : ""
+                }`}
+              >
                 <img
                   className="selected-media"
                   src={`/media/${activeSlug}/${activeProject.media[mediaPage]}`}
                 />
 
-                <div className="page">
+                <div
+                  className={`page ${
+                    activeProject.media.length === 1 ? "hide" : ""
+                  }`}
+                >
                   <span>
                     {mediaPage + 1}/{activeProject.media.length}
                   </span>
@@ -81,22 +89,24 @@ export default function ProjectDetails({ slug, closeDetails, project }: Props) {
                   </svg>
                 </button>
 
-                <div className="all-media-container no-scrollbar">
-                  <div className="all-media">
-                    {activeProject.media.map(
-                      (fileName: string, idx: number) => (
-                        <img
-                          key={`all-media-${idx}`}
-                          className={`tile ${
-                            mediaPage === idx ? "active" : ""
-                          }`}
-                          src={`/media/${activeSlug}/${fileName}`}
-                          onClick={() => setMediaPage(idx)}
-                        />
-                      )
-                    )}
+                {activeProject.media.length > 1 && (
+                  <div className="all-media-container no-scrollbar">
+                    <div className="all-media">
+                      {activeProject.media.map(
+                        (fileName: string, idx: number) => (
+                          <img
+                            key={`all-media-${idx}`}
+                            className={`tile ${
+                              mediaPage === idx ? "active" : ""
+                            }`}
+                            src={`/media/${activeSlug}/${fileName}`}
+                            onClick={() => setMediaPage(idx)}
+                          />
+                        )
+                      )}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             )}
 
