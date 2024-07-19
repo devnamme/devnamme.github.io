@@ -26,12 +26,13 @@ export const WorksDataGroups: {
     "project-management",
   ],
   mobile: [
-    // "beadle"
+    "beadle",
+    //
   ],
   game: [
     "ma10mon-cs",
     "race-to-twelve",
-    // "slimed",
+    "slimed",
     "skiulas-chamber",
     "fuji-animation",
   ],
@@ -58,16 +59,52 @@ export const WorksData: { [key: string]: Project } = {
   //     </>
   //   ),
   // },
-  // beadle: {
-  //   title: "Beadle: AdMU Student App",
-  //   tech: ["Flutter", "Dart"],
-  //   media: ["thumbnail.png"],
-  //   content: (
-  //     <>
-  //       <p>Hello world</p>
-  //     </>
-  //   ),
-  // },
+  beadle: {
+    title: "Beadle: AdMU Student App",
+    tech: ["Flutter", "Dart"],
+    media: [
+      "01.png",
+      "02.png",
+      "03.png",
+      "04.png",
+      "05.png",
+      "06.png",
+      "07.png",
+      "08.png",
+      "09.png",
+      "10.png",
+      "11.png",
+      "12.png",
+    ],
+    thumbnail: "01.png",
+    content: (
+      <>
+        <p>
+          Beadle is a productivity app made by, and for Ateneans. It features a
+          task tracker, Pomodoro timer, class schedule creator, enlistment
+          helper, Higher Education Cluster (formerly known as the Loyola
+          Schools) directory list, and QPI calculator, all bundled into a
+          singular mobile application.
+        </p>
+        <p>
+          I was the product owner, project manager, and lead developer for
+          Beadle under the Google Developer Student Clubs Loyola despite being a
+          Freshman at the time. We attempted to incorporate the AGILE
+          methodology in our development cycle.
+        </p>
+        <p>
+          We were able to finish 90% of the entire project in less than a
+          year—from brand ideation, UX research, designing, and
+          development—stopping shortly before starting A/B Testing. While it is
+          unfortunate that we weren't able to publish the application due to
+          internal problems within the organization, the project definitely
+          quickstarted my career in the field of Software Development as I
+          learned standard Git practices, the Software Development Life Cycle
+          (SDLC), as well as how to work efficiently as part of a team.
+        </p>
+      </>
+    ),
+  },
   "dead-end": {
     title: "Dead End: The Commuter Experience",
     tech: ["ReactJS"],
@@ -148,11 +185,14 @@ export const WorksData: { [key: string]: Project } = {
     title: "Flood Guard Calbayog",
     tech: ["Ruby on Rails", "MySQL", "ReactJS", "Tailwind CSS"],
     media: ["thumbnail.png"],
+    thumbnailStyles: {
+      objectPosition: "left center",
+    },
     content: (
       <>
         <p>
           Flood Guard Calbayog is a web application that efficiently calculates
-          flooding risks and creates heatmaps.
+          flooding risks and creates heatmaps using these data.
         </p>
         <p>
           I was outsourced as a freelance developer by Cloudband Solutions in
@@ -177,6 +217,9 @@ export const WorksData: { [key: string]: Project } = {
     ],
     media: ["thumbnail.jpg"],
     thumbnail: "thumbnail.jpg",
+    thumbnailStyles: {
+      objectPosition: "top center",
+    },
     content: (
       <>
         <p>
@@ -275,6 +318,9 @@ export const WorksData: { [key: string]: Project } = {
     tech: ["Arduino", "C++"],
     media: ["thumbnail.jpg"],
     thumbnail: "thumbnail.jpg",
+    thumbnailStyles: {
+      objectPosition: "top center",
+    },
     content: (
       <>
         <p>

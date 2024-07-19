@@ -48,6 +48,7 @@ export default function Gallery({ setSlug }: Props) {
           .join(" ");
 
         if (type === "web") areas_mobile = `"${top}" "${bot}"`;
+        else if (type === "mobile") areas_mobile = areas_desktop;
         else if (type === "game") areas_mobile = `"${bot}" "${top}"`;
       }
 
@@ -58,31 +59,34 @@ export default function Gallery({ setSlug }: Props) {
 
   return (
     <div id="gallery" ref={galleryRef}>
-      {(["web", "game"] as WorksDataGroup[]).map((key: WorksDataGroup) => (
-        <div key={`group-${key}`} className="group" id={key}>
-          {WorksDataGroups[key].map((slug: string, j) => (
-            <div
-              key={`gallery-${key}-${slug}`}
-              id={slug}
-              className="thumbnail-wrapper"
-              style={{
-                gridArea: `a${j}`,
-              }}
-              onClick={() => setSlug(slug)}
-            >
-              <img
-                className="thumbnail"
-                src={`/media/${slug}/${
-                  WorksData[slug].thumbnail == null
-                    ? "thumbnail.png"
-                    : WorksData[slug].thumbnail
-                }`}
+      {(["web", "mobile", "game"] as WorksDataGroup[]).map(
+        (key: WorksDataGroup) => (
+          <div key={`group-${key}`} className="group" id={key}>
+            {WorksDataGroups[key].map((slug: string, j) => (
+              <div
+                key={`gallery-${key}-${slug}`}
+                id={slug}
+                className="thumbnail-wrapper"
+                style={{
+                  gridArea: `a${j}`,
+                }}
                 onClick={() => setSlug(slug)}
-              />
-            </div>
-          ))}
-        </div>
-      ))}
+              >
+                <img
+                  className="thumbnail"
+                  src={`/media/${slug}/${
+                    WorksData[slug].thumbnail == null
+                      ? "thumbnail.png"
+                      : WorksData[slug].thumbnail
+                  }`}
+                  onClick={() => setSlug(slug)}
+                  style={WorksData[slug].thumbnailStyles}
+                />
+              </div>
+            ))}
+          </div>
+        )
+      )}
     </div>
   );
 }

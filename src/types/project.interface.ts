@@ -6,8 +6,9 @@ export interface Project {
     url: string;
   }[];
   media: string[];
-  content: JSX.Element;
   thumbnail?: string;
+  thumbnailStyles?: React.CSSProperties;
+  content: JSX.Element;
 }
 
 export type WorksDataGroup = "web" | "mobile" | "game";
