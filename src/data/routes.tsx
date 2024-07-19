@@ -23,10 +23,10 @@ export const RouteHierarchy: {
         slug: "web",
         text: "Web",
       },
-      // mobile: {
-      //   slug: "mobile",
-      //   text: "Mobile",
-      // },
+      mobile: {
+        slug: "mobile",
+        text: "Mobile",
+      },
       game: {
         slug: "game",
         text: "Game",
@@ -64,17 +64,51 @@ export const RouteHierarchy: {
 export const NavList: {
   [key: string]: {
     path: string;
+    targetCenterFirst?: string;
     slugs: string[];
   };
 } = {
   about: { path: "/", slugs: ["about"] },
-  works: { path: "/works", slugs: ["works"] },
-  web: { path: "/works/web", slugs: ["works", "web"] },
-  // mobile: { path: "/works/mobile", slugs: ["works", "mobile"] },
-  game: { path: "/works/game", slugs: ["works", "game"] },
-  articles: { path: "/produced/articles", slugs: ["produced", "articles"] },
-  videos: { path: "/produced/videos", slugs: ["produced", "videos"] },
-  issues: { path: "/produced/issues", slugs: ["produced", "issues"] },
+
+  works: { path: "/works", targetCenterFirst: "web", slugs: ["works"] },
+  web: {
+    path: "/works/web",
+    targetCenterFirst: "web",
+    slugs: ["works", "web"],
+  },
+  mobile: {
+    path: "/works/mobile",
+    targetCenterFirst: "mobile",
+    slugs: ["works", "mobile"],
+  },
+  game: {
+    path: "/works/game",
+    targetCenterFirst: "game",
+    slugs: ["works", "game"],
+  },
+
+  produced: {
+    path: "/produced",
+    targetCenterFirst: "articles",
+    slugs: ["produced"],
+  },
+  articles: {
+    path: "/produced/articles",
+    targetCenterFirst: "articles",
+    slugs: ["produced", "articles"],
+  },
+  videos: {
+    path: "/produced/videos",
+    targetCenterFirst: "videos",
+    slugs: ["produced", "videos"],
+  },
+  issues: {
+    path: "/produced/issues",
+    targetCenterFirst: "issues",
+    slugs: ["produced", "issues"],
+  },
+
   awards: { path: "/awards", slugs: ["awards"] },
+
   experiences: { path: "/experiences", slugs: ["experiences"] },
 };

@@ -17,10 +17,17 @@ export const ScrollTo = (left: number, main: HTMLElement) => {
 export const FindByPathAndScrollTo = (path: string) => {
   Object.keys(NavList).forEach((id: string) => {
     if (NavList[id].path === path) {
-      let el = document.getElementById(id);
       let main = document.getElementById("main")!;
 
-      ScrollTo(el!.offsetLeft - main.getBoundingClientRect().left, main);
+      if (NavList[id].targetCenterFirst) {
+        let el = document.querySelector(
+          `#${NavList[id].targetCenterFirst} > *:first-child`
+        ) as HTMLElement;
+        CenterOnElement(el, main);
+      } else {
+        let el = document.getElementById(id)!;
+        CenterOnElement(el, main);
+      }
     }
   });
 };
