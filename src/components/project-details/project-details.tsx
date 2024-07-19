@@ -125,6 +125,7 @@ export default function ProjectDetails({ slug, closeDetails, project }: Props) {
 
               <div className="info">
                 <h2 className="title">{activeProject.title}</h2>
+                {/* <p className="subtitle">Project</p> */}
 
                 {activeProject.tech.length > 0 && (
                   <div className="tech">

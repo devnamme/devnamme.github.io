@@ -262,6 +262,12 @@
   line-height: 1;
 }
 
+.project-details .subtitle {
+  font-size: var(--link-font-size);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
 .project-details .tech {
   font-size: var(--link-font-size);
   text-transform: uppercase;
