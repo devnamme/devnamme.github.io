@@ -1,8 +1,12 @@
-import { ExternalSource } from "./generic.interface";
+export interface Article {
+  title: string;
+  url: string;
+}
 
-export interface Article extends ExternalSource {}
-
-export interface Research extends ExternalSource {}
+export interface Research {
+  title: string;
+  coauthors: string[];
+}
 
 export enum PublishedDataGroup {
   articles = "articles",
