@@ -87,7 +87,7 @@ function GeneralLayout() {
         const info: { path: string; slugs: string[] } =
           NavList[entry.target.id];
         if (info !== undefined) {
-          // navigate(info.path);
+          navigate(info.path);
 
           const nrs = { ...routeState };
           nrs.primary = NavList[entry.target.id].slugs[0];
@@ -119,6 +119,22 @@ function GeneralLayout() {
   };
 
   useEffect(() => {
+    if (pathname.startsWith("/project")) {
+      const projectSlug = pathname.split("/")[2];
+      if (WorksData[projectSlug] != null) setSlug(projectSlug);
+      navigate("/");
+    } else {
+      let found = false;
+      Object.keys(NavList).forEach((key: string) => {
+        if (NavList[key].path === pathname) {
+          found = true;
+          FindByPathAndScrollTo(pathname);
+        }
+      });
+
+      if (!found) navigate("/");
+    }
+
     let nob = new IntersectionObserver(observerCallback, {
       rootMargin: "-50%",
     });
@@ -134,24 +150,6 @@ function GeneralLayout() {
 
     return () => window.removeEventListener("scroll", onWindowScroll);
   }, []);
-
-  useEffect(() => {
-    let second = pathname.split("/")[2];
-    if (pathname.startsWith("/works")) {
-      if (second == null) {
-        navigate("/works/web");
-        FindByPathAndScrollTo("/works/web");
-      }
-    } else if (pathname.startsWith("/project")) {
-      const projectSlug = pathname.split("/")[2];
-      if (WorksData[projectSlug] != null) setSlug(projectSlug);
-      navigate("/");
-    } else if (pathname.startsWith("/produced")) {
-      if (second == null) {
-        navigate("/produced/articles");
-      }
-    }
-  }, [pathname]);
 
   useEffect(() => {
     if (slug != null) {
