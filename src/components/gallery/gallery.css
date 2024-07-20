@@ -26,7 +26,9 @@
 }
 
 #gallery .thumbnail {
-  height: 45vh;
+  --base-height: 45vh;
+
+  height: var(--base-height);
 
   display: block;
   object-fit: cover;
@@ -60,7 +62,7 @@
 
 @media screen and (max-width: 768px) {
   #gallery .thumbnail {
-    height: 35vh;
+    --base-height: 35vh;
   }
 }
 
@@ -75,19 +77,20 @@
   }
 
   #gallery .thumbnail {
-    height: 20vh;
+    --base-height: 20vh;
+    --double-height: calc(var(--base-height) + 24px + var(--base-height));
   }
 
-  #gallery #web.group .thumbnail {
+  /* #gallery #web.group .thumbnail {
     height: min(20vh, calc((100vw - 24px - 24px) / 16 * 9));
-  }
+  } */
 
   #gallery #mobile.group .thumbnail {
-    height: calc(20vh + 24px + 20vh);
+    height: var(--double-height);
   }
 
   #gallery #game.group .thumbnail,
   #gallery #articles.group .thumbnail {
-    height: calc(20vh + 24px + 20vh);
+    height: var(--double-height);
   }
 }
