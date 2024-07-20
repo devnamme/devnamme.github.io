@@ -55,20 +55,20 @@ export const RouteHierarchy: {
     slug: "awards",
     text: "Awards",
   },
-  produced: {
-    slug: "produced",
-    text: "Produced",
-    routes: {
-      videos: {
-        slug: "videos",
-        text: "Videos",
-      },
-      issues: {
-        slug: "issues",
-        text: "Issues",
-      },
-    },
-  },
+  // produced: {
+  //   slug: "produced",
+  //   text: "Produced",
+  //   routes: {
+  //     videos: {
+  //       slug: "videos",
+  //       text: "Videos",
+  //     },
+  //     issues: {
+  //       slug: "issues",
+  //       text: "Issues",
+  //     },
+  //   },
+  // },
 };
 
 export const NavList: {
