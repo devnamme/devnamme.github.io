@@ -41,10 +41,10 @@ export const RouteHierarchy: {
         slug: "articles",
         text: "Articles",
       },
-      research: {
-        slug: "research",
-        text: "Research",
-      },
+      // research: {
+      //   slug: "research",
+      //   text: "Research",
+      // },
     },
   },
   experiences: {
