@@ -50,12 +50,14 @@
   aspect-ratio: 3 / 4;
 }
 
-#gallery #experiences.group {
+#gallery #experiences.group,
+#gallery #awards.group {
   row-gap: 64px;
   column-gap: 64px;
 }
 
-#gallery .exp-container {
+#gallery .exp-container,
+#gallery .award-container {
   width: 500px;
   height: fit-content;
   /* border-left: 1px solid white;
@@ -67,30 +69,38 @@
   row-gap: 8px;
 }
 
-#gallery .exp-container:nth-child(2n + 1) {
+#gallery .award-container {
+  border-left: 1px solid white;
+  padding-left: 16px;
+}
+
+#gallery .exp-container:nth-child(2n + 1),
+#gallery .award-container:nth-child(2n + 1) {
   flex-flow: column-reverse nowrap;
   align-self: flex-end;
 }
 
-#gallery .exp-container:nth-child(2n) {
+#gallery .exp-container:nth-child(2n),
+#gallery .award-container:nth-child(2n) {
   flex-flow: column nowrap;
   align-self: flex-start;
 }
 
-#gallery .exp-container .position {
+#gallery .exp-container .position,
+#gallery .award-container .title {
   font-size: var(--position-font-size);
   text-transform: uppercase;
   line-height: 1;
 }
 
-#gallery .exp-container .company-duration {
+#gallery .exp-container .company-duration,
+#gallery .award-container .team-position {
   font-size: var(--body-font-size);
   font-weight: 300;
   line-height: 1;
   text-transform: uppercase;
 
   display: flex;
-  flex-flow: row wrap;
   column-gap: var(--links-col-gap);
   row-gap: var(--links-row-gap);
 }
@@ -104,6 +114,10 @@
 }
 
 #gallery .exp-container:nth-child(2n) .company-duration {
+  flex-flow: column nowrap;
+}
+
+#gallery .award-container .team-position {
   flex-flow: column nowrap;
 }
 
@@ -143,7 +157,8 @@
     height: var(--double-height);
   }
 
-  #gallery .exp-container {
+  #gallery .exp-container,
+  #gallery .award-container {
     width: calc(100vw - 2 * var(--general-padding-x));
   }
 }

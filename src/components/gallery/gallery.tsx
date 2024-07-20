@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { AwardsData } from "../../data/awards";
 import { ExperienceData } from "../../data/experiences";
 import { PublishedData, PublishedDataGroups } from "../../data/published";
 import { WorksData, WorksDataGroups } from "../../data/works";
+import { Award } from "../../types/awards.interface";
 import { Experience } from "../../types/experiences.interface";
 import { WorksDataType } from "../../types/works.interface";
 import "./gallery.css";
@@ -64,10 +66,10 @@ export default function Gallery({ setSlug }: Props) {
         if (type === "web") areas_mobile = `"${top}" "${bot}"`;
         else if (type === "mobile") areas_mobile = areas_desktop;
         else if (type === "game") areas_mobile = areas_desktop;
-      } else if (type === "experiences") {
-        const size = ExperienceData.length;
+      } else if (type === "experiences" || type === "awards") {
+        const size =
+          type === "experiences" ? ExperienceData.length : AwardsData.length;
         const { top, bot } = generateMobileGridAreas(size);
-
         areas_desktop = areas_mobile = `"${top}" "${bot}"`;
       }
 
@@ -149,6 +151,25 @@ export default function Gallery({ setSlug }: Props) {
               </p>
 
               <p className="duration">{getDurationString(exp.duration)}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="group" id="awards">
+        {AwardsData.map((award: Award, idx: number) => (
+          <div
+            key={`gallery-awards-${idx}`}
+            className="award-container"
+            style={{ gridArea: `a${idx}` }}
+          >
+            <p className="title">
+              {award.title} <span className="no-wrap">({award.date})</span>
+            </p>
+
+            <div className="team-position">
+              <p className="position">{award.position}</p>
+              {award.team && <p className="team">Team {award.team}</p>}
             </div>
           </div>
         ))}
