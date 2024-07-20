@@ -94,7 +94,7 @@
 }
 
 #gallery .exp-container .company-duration,
-#gallery .award-container .team-position {
+#gallery .award-container .date-team-position {
   font-size: var(--body-font-size);
   font-weight: 300;
   line-height: 1;
@@ -109,16 +109,21 @@
   color: white;
 }
 
-#gallery .exp-container:nth-child(2n + 1) .company-duration {
+#gallery .exp-container:nth-child(2n + 1) .company-duration,
+#gallery .award-container:nth-child(2n + 1) .date-team-position {
   flex-flow: column-reverse nowrap;
 }
 
-#gallery .exp-container:nth-child(2n) .company-duration {
+#gallery .exp-container:nth-child(2n) .company-duration,
+#gallery .award-container:nth-child(2n) .date-team-position {
   flex-flow: column nowrap;
 }
 
 #gallery .award-container .team-position {
-  flex-flow: column nowrap;
+  font-size: var(--body-font-size);
+  font-weight: 300;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 @media screen and (max-width: 1200px) {

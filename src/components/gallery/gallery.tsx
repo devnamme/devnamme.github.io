@@ -163,13 +163,17 @@ export default function Gallery({ setSlug }: Props) {
             className="award-container"
             style={{ gridArea: `a${idx}` }}
           >
-            <p className="title">
-              {award.title} <span className="no-wrap">({award.date})</span>
-            </p>
+            <p className="title">{award.title}</p>
 
-            <div className="team-position">
-              <p className="position">{award.position}</p>
-              {award.team && <p className="team">Team {award.team}</p>}
+            <div className="date-team-position">
+              <p className="team-position">
+                <span className="position">{award.position}</span>
+                {award.team && (
+                  <span className="team no-wrap"> (Team {award.team})</span>
+                )}
+              </p>
+
+              <p className="date">{award.date}</p>
             </div>
           </div>
         ))}
