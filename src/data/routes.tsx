@@ -47,13 +47,13 @@ export const RouteHierarchy: {
       },
     },
   },
-  awards: {
-    slug: "awards",
-    text: "Awards",
-  },
   experiences: {
     slug: "experiences",
     text: "Experiences",
+  },
+  awards: {
+    slug: "awards",
+    text: "Awards",
   },
   produced: {
     slug: "produced",
@@ -111,9 +111,12 @@ export const NavList: {
     slugs: ["published", "research"],
   },
 
-  awards: { path: "/awards", slugs: ["awards"] },
-
-  experiences: { path: "/experiences", slugs: ["experiences"] },
+  experiences: {
+    path: "/experiences",
+    targetCenterFirst: "experiences",
+    slugs: ["experiences"],
+  },
+  awards: { path: "/awards", targetCenterFirst: "awards", slugs: ["awards"] },
 
   produced: {
     path: "/produced",

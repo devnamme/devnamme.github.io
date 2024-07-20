@@ -7,7 +7,7 @@ export default function AboutSection() {
       <p className="text">
         I am a Manila-based software developer who started programming at the
         age of 11. Through tech, I build solutions centered around{" "}
-        <span className="no-space">user experience</span>.
+        <span className="no-wrap">user experience</span>.
       </p>
     </section>
   );

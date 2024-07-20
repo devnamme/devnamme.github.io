@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { ExperienceData } from "../../data/experiences";
 import { PublishedData, PublishedDataGroups } from "../../data/published";
 import { WorksData, WorksDataGroups } from "../../data/works";
+import { Experience } from "../../types/experiences.interface";
 import { WorksDataType } from "../../types/works.interface";
 import "./gallery.css";
 
@@ -11,6 +13,39 @@ interface Props {
 
 export default function Gallery({ setSlug }: Props) {
   const galleryRef = useRef(null);
+
+  const generateDesktopGridAreas = (size: number) =>
+    '"' + [...Array(size)].map((_, idx) => `a${idx}`).join(" ") + '"';
+
+  const generateMobileGridAreas = (
+    size: number
+  ): { top: string; bot: string } => {
+    const top = [...Array(size + 1)]
+      .map((_, idx) => {
+        const calc = "a" + Math.floor(idx / 2) * 2;
+        return idx === size ? (size % 2 === 0 ? "." : calc) : calc;
+      })
+      .join(" ");
+
+    const bot = [...Array(size + 1)]
+      .map((_, idx) => {
+        const calc = "a" + (Math.floor((idx - 1) / 2) * 2 + 1);
+
+        if (idx === 0) return ".";
+        return idx === size ? (size % 2 === 0 ? calc : ".") : calc;
+      })
+      .join(" ");
+
+    return {
+      top: top,
+      bot: bot,
+    };
+  };
+
+  const getDurationString = ({ from, to }: { from: string; to?: string }) => {
+    if (!to) return `Since ${from}`;
+    return `${from} to ${to}`;
+  };
 
   useEffect(() => {
     const els: NodeListOf<HTMLElement> =
@@ -23,36 +58,17 @@ export default function Gallery({ setSlug }: Props) {
 
       if (type === "web" || type === "mobile" || type === "game") {
         const size = WorksDataGroups[type].length;
-
-        areas_desktop =
-          '"' + [...Array(size)].map((_, idx) => `a${idx}`).join(" ") + '"';
-
-        // 01 01 03 03 05 05
-        // __ 02 02 04 04 __
-        //
-        // 01 01 03 03 __
-        // __ 02 02 04 04
-
-        const top = [...Array(size + 1)]
-          .map((_, idx) => {
-            const calc = "a" + Math.floor(idx / 2) * 2;
-            return idx === size ? (size % 2 === 0 ? "." : calc) : calc;
-          })
-          .join(" ");
-
-        const bot = [...Array(size + 1)]
-          .map((_, idx) => {
-            const calc = "a" + (Math.floor((idx - 1) / 2) * 2 + 1);
-
-            if (idx === 0) return ".";
-            return idx === size ? (size % 2 === 0 ? calc : ".") : calc;
-          })
-          .join(" ");
+        areas_desktop = generateDesktopGridAreas(size);
+        const { top, bot } = generateMobileGridAreas(size);
 
         if (type === "web") areas_mobile = `"${top}" "${bot}"`;
         else if (type === "mobile") areas_mobile = areas_desktop;
-        // else if (type === "game") areas_mobile = `"${bot}" "${top}"`;
         else if (type === "game") areas_mobile = areas_desktop;
+      } else if (type === "experiences") {
+        const size = ExperienceData.length;
+        const { top, bot } = generateMobileGridAreas(size);
+
+        areas_desktop = areas_mobile = `"${top}" "${bot}"`;
       }
 
       el.style.setProperty("--grid-areas-desktop", areas_desktop);
@@ -106,6 +122,35 @@ export default function Gallery({ setSlug }: Props) {
               }`}
             />
           </Link>
+        ))}
+      </div>
+
+      <div className="group" id="experiences">
+        {ExperienceData.map((exp: Experience, idx: number) => (
+          <div
+            key={`gallery-experiences-${idx}`}
+            className="exp-container"
+            style={{
+              gridArea: `a${idx}`,
+            }}
+          >
+            <p className="position">{exp.position}</p>
+
+            <div className="company-duration">
+              <p className="company">
+                {exp.company_url ? (
+                  <a href={exp.company_url} target="_blank">
+                    {exp.company}
+                  </a>
+                ) : (
+                  exp.company
+                )}{" "}
+                //
+              </p>
+
+              <p className="duration">{getDurationString(exp.duration)}</p>
+            </div>
+          </div>
         ))}
       </div>
 
