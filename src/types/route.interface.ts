@@ -19,15 +19,21 @@ export interface RouteState {
         game: RouteStateRoute;
       };
     };
-    produced: {
+    published: {
       active: boolean;
       routes: {
         articles: RouteStateRoute;
-        videos: RouteStateRoute;
-        issues: RouteStateRoute;
+        research: RouteStateRoute;
       };
     };
     awards: RouteStateRoute;
     experiences: RouteStateRoute;
+    produced: {
+      active: boolean;
+      routes: {
+        videos: RouteStateRoute;
+        issues: RouteStateRoute;
+      };
+    };
   };
 }

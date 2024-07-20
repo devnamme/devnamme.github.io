@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { PublishedData, PublishedDataGroups } from "../../data/published";
 import { WorksData, WorksDataGroups } from "../../data/works";
 import { WorksDataType } from "../../types/works.interface";
 import "./gallery.css";
@@ -87,6 +89,24 @@ export default function Gallery({ setSlug }: Props) {
           )}
         </div>
       ))}
+
+      <div className="group" id="articles">
+        {PublishedDataGroups.articles.map((slug: string, idx: number) => (
+          <Link
+            key={`gallery-articles-${idx}`}
+            to={PublishedData.articles[slug].url}
+            target="_blank"
+            className="thumbnail-wrapper"
+          >
+            <img
+              className="thumbnail"
+              src={`/media/published/${
+                PublishedData.articles[slug].thumbnail || slug + ".png"
+              }`}
+            />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

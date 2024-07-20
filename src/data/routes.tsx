@@ -33,7 +33,7 @@ export const RouteHierarchy: {
       },
     },
   },
-  publications: {
+  published: {
     slug: "published",
     text: "Published",
     routes: {
@@ -97,13 +97,14 @@ export const NavList: {
     slugs: ["works", "game"],
   },
 
-  publications: {
+  published: {
     path: "/published",
+    targetCenterFirst: "articles",
     slugs: ["published"],
   },
   articles: {
     path: "/published/articles",
-    slugs: ["pubished", "articles"],
+    slugs: ["published", "articles"],
   },
   research: {
     path: "/published/research",

@@ -1,6 +1,7 @@
 export interface Article {
   title: string;
   url: string;
+  thumbnail?: string;
 }
 
 export interface Research {

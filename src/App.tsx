@@ -35,13 +35,16 @@ const DEFAULT_ROUTE_STATE: RouteState = {
         game: { active: false },
       },
     },
-    publications: {
+    published: {
       active: false,
+      routes: {
+        articles: { active: false },
+        research: { active: false },
+      },
     },
     produced: {
       active: false,
       routes: {
-        articles: { active: false },
         videos: { active: false },
         issues: { active: false },
       },

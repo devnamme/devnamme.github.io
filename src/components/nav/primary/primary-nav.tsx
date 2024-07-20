@@ -50,7 +50,7 @@ export default function PrimaryNav({ routeState, setRouteState }: Props) {
             : ""
         }
       >
-        {Object.keys(storedPrimaryRoute!.routes!).map(
+        {Object.keys(storedPrimaryRoute!.routes || []).map(
           (secondary: string, idx: number) => (
             <ExpandingLink
               key={`nav-secondary-${idx}`}
@@ -60,9 +60,11 @@ export default function PrimaryNav({ routeState, setRouteState }: Props) {
               left={`${storedPrimaryRoute!.routes![secondary].text} //`}
               right=""
               active={
-                routeState.routes[routeState.primary].routes !== undefined
+                routeState.routes[routeState.primary].routes
                   ? routeState.routes[routeState.primary].routes![secondary]
-                      .active
+                    ? routeState.routes[routeState.primary].routes![secondary]
+                        .active
+                    : false
                   : false
               }
             />
