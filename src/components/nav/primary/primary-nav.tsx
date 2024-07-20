@@ -51,9 +51,9 @@ export default function PrimaryNav({ routeState, setRouteState }: Props) {
         }
       >
         {Object.keys(storedPrimaryRoute!.routes || []).map(
-          (secondary: string, idx: number) => (
+          (secondary: string) => (
             <ExpandingLink
-              key={`nav-secondary-${idx}`}
+              key={`nav-secondary-${secondary}`}
               path={`/${storedPrimaryRoute!.slug}/${
                 storedPrimaryRoute!.routes![secondary].slug
               }`}
