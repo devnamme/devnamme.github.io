@@ -39,7 +39,7 @@ export default function ProjectDetails({ slug, closeDetails, project }: Props) {
               >
                 <img
                   className="selected-media"
-                  src={`/media/${activeSlug}/${activeProject.media[mediaPage]}`}
+                  src={`/media/works/${activeSlug}/${activeProject.media[mediaPage]}`}
                 />
 
                 <div
@@ -99,7 +99,7 @@ export default function ProjectDetails({ slug, closeDetails, project }: Props) {
                             className={`tile ${
                               mediaPage === idx ? "active" : ""
                             }`}
-                            src={`/media/${activeSlug}/${fileName}`}
+                            src={`/media/works/${activeSlug}/${fileName}`}
                             onClick={() => setMediaPage(idx)}
                           />
                         )

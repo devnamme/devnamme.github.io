@@ -74,7 +74,7 @@ export default function Gallery({ setSlug }: Props) {
               >
                 <img
                   className="thumbnail"
-                  src={`/media/${slug}/${
+                  src={`/media/works/${slug}/${
                     WorksData[slug].thumbnail == null
                       ? "thumbnail.png"
                       : WorksData[slug].thumbnail
