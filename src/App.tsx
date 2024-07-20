@@ -35,6 +35,9 @@ const DEFAULT_ROUTE_STATE: RouteState = {
         game: { active: false },
       },
     },
+    publications: {
+      active: false,
+    },
     produced: {
       active: false,
       routes: {

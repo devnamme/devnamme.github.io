@@ -33,21 +33,17 @@ export const RouteHierarchy: {
       },
     },
   },
-  produced: {
-    slug: "produced",
-    text: "Produced",
+  publications: {
+    slug: "published",
+    text: "Published",
     routes: {
       articles: {
         slug: "articles",
         text: "Articles",
       },
-      videos: {
-        slug: "videos",
-        text: "Videos",
-      },
-      issues: {
-        slug: "issues",
-        text: "Issues",
+      research: {
+        slug: "research",
+        text: "Research",
       },
     },
   },
@@ -58,6 +54,20 @@ export const RouteHierarchy: {
   experiences: {
     slug: "experiences",
     text: "Experiences",
+  },
+  produced: {
+    slug: "produced",
+    text: "Produced",
+    routes: {
+      videos: {
+        slug: "videos",
+        text: "Videos",
+      },
+      issues: {
+        slug: "issues",
+        text: "Issues",
+      },
+    },
   },
 };
 
@@ -87,15 +97,27 @@ export const NavList: {
     slugs: ["works", "game"],
   },
 
-  produced: {
-    path: "/produced",
-    targetCenterFirst: "articles",
-    slugs: ["produced"],
+  publications: {
+    path: "/published",
+    slugs: ["published"],
   },
   articles: {
-    path: "/produced/articles",
-    targetCenterFirst: "articles",
-    slugs: ["produced", "articles"],
+    path: "/published/articles",
+    slugs: ["pubished", "articles"],
+  },
+  research: {
+    path: "/published/research",
+    slugs: ["published", "research"],
+  },
+
+  awards: { path: "/awards", slugs: ["awards"] },
+
+  experiences: { path: "/experiences", slugs: ["experiences"] },
+
+  produced: {
+    path: "/produced",
+    targetCenterFirst: "videos",
+    slugs: ["produced"],
   },
   videos: {
     path: "/produced/videos",
@@ -107,8 +129,4 @@ export const NavList: {
     targetCenterFirst: "issues",
     slugs: ["produced", "issues"],
   },
-
-  awards: { path: "/awards", slugs: ["awards"] },
-
-  experiences: { path: "/experiences", slugs: ["experiences"] },
 };
