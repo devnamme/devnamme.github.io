@@ -30,9 +30,9 @@ export const WorksDataGroups: {
   game: [
     "ma10mon-cs",
     "race-to-twelve",
-    "slimed",
     "skiulas-chamber",
     "fuji-animation",
+    "slimed",
   ],
 };
 
