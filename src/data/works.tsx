@@ -1,4 +1,4 @@
-import { Project } from "../types/works.interface";
+import { Project, WorksDataType } from "../types/works.interface";
 
 export const Labels = {
   website: "Open website",
@@ -7,9 +7,7 @@ export const Labels = {
 };
 
 export const WorksDataGroups: {
-  web: string[];
-  mobile: string[];
-  game: string[];
+  [key in WorksDataType]: string[];
 } = {
   web: [
     "the-guidon-archives",

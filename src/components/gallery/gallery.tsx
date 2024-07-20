@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { WorksData, WorksDataGroups } from "../../data/works";
-import { WorksDataGroup } from "../../types/works.interface";
+import { WorksDataType } from "../../types/works.interface";
 import "./gallery.css";
 
 interface Props {
@@ -59,10 +59,10 @@ export default function Gallery({ setSlug }: Props) {
 
   return (
     <div id="gallery" ref={galleryRef}>
-      {(["web", "mobile", "game"] as WorksDataGroup[]).map(
-        (key: WorksDataGroup) => (
-          <div key={`group-${key}`} className="group" id={key}>
-            {WorksDataGroups[key].map((slug: string, j) => (
+      {Object.keys(WorksDataType).map((key: string) => (
+        <div key={`group-${key}`} className="group" id={key}>
+          {WorksDataGroups[key as keyof typeof WorksDataType].map(
+            (slug: string, j) => (
               <div
                 key={`gallery-${key}-${slug}`}
                 id={slug}
@@ -83,10 +83,10 @@ export default function Gallery({ setSlug }: Props) {
                   style={WorksData[slug].thumbnailStyles}
                 />
               </div>
-            ))}
-          </div>
-        )
-      )}
+            )
+          )}
+        </div>
+      ))}
     </div>
   );
 }

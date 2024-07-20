@@ -11,4 +11,8 @@ export interface Project {
   content: JSX.Element;
 }
 
-export type WorksDataGroup = "web" | "mobile" | "game";
+export enum WorksDataType {
+  web = "web",
+  mobile = "mobile",
+  game = "game",
+}
