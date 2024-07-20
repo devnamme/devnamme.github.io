@@ -51,7 +51,8 @@ export default function Gallery({ setSlug }: Props) {
 
         if (type === "web") areas_mobile = `"${top}" "${bot}"`;
         else if (type === "mobile") areas_mobile = areas_desktop;
-        else if (type === "game") areas_mobile = `"${bot}" "${top}"`;
+        // else if (type === "game") areas_mobile = `"${bot}" "${top}"`;
+        else if (type === "game") areas_mobile = areas_desktop;
       }
 
       el.style.setProperty("--grid-areas-desktop", areas_desktop);
@@ -107,6 +108,8 @@ export default function Gallery({ setSlug }: Props) {
           </Link>
         ))}
       </div>
+
+      <div />
     </div>
   );
 }

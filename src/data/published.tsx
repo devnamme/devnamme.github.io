@@ -8,9 +8,9 @@ export const PublishedDataGroups: {
   [key in PublishedDataGroup]: string[];
 } = {
   articles: [
-    "rags-outnumbered-by-riches",
     "au-revoir",
-    //
+    "rags-outnumbered-by-riches",
+    "honey-weve-run-out-of-wicks",
   ],
   research: [
     "bone-metastasis",
@@ -30,6 +30,10 @@ export const PublishedData: {
     "au-revoir": {
       title: "Au revoir",
       url: "https://theguidon.com/2024/04/au-revoir/",
+    },
+    "honey-weve-run-out-of-wicks": {
+      title: "Honey, we’ve run out of wicks",
+      url: "https://theguidon.com/2023/02/honey-weve-run-out-of-wicks/",
     },
     "rags-outnumbered-by-riches": {
       title: "Rags outnumbered by riches",

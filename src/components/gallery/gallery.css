@@ -3,10 +3,8 @@
 
   display: flex;
   flex-flow: row nowrap;
-  column-gap: 256px;
+  column-gap: 128px;
   align-items: center;
-
-  padding-right: 256px;
 }
 
 #gallery .group {
@@ -16,6 +14,7 @@
   grid-auto-columns: auto;
   grid-template-areas: var(--grid-areas-desktop);
   column-gap: 24px;
+  row-gap: 24px;
 
   width: fit-content;
   min-width: 0;
@@ -27,7 +26,6 @@
 }
 
 #gallery .thumbnail {
-  width: calc(45vh / 9 * 16);
   height: 45vh;
 
   display: block;
@@ -37,9 +35,17 @@
   cursor: pointer;
 }
 
+#gallery #web.group .thumbnail {
+  aspect-ratio: 16 / 9;
+}
+
 #gallery #mobile.group .thumbnail {
   width: auto;
-  height: 65vh;
+}
+
+#gallery #game.group .thumbnail,
+#gallery #articles.group .thumbnail {
+  aspect-ratio: 3 / 4;
 }
 
 #gallery .spacer {
@@ -53,35 +59,35 @@
 }
 
 @media screen and (max-width: 768px) {
-  #gallery {
-    column-gap: 128px;
-    padding-right: 128px;
-  }
-
   #gallery .thumbnail {
-    width: 80vw;
-    height: calc(80vw / 16 * 9);
+    height: 35vh;
   }
 }
 
 @media screen and (max-width: 576px) {
   #gallery {
     column-gap: 80px;
-    padding-right: 80px;
   }
 
   #gallery .group {
     grid-template-areas: var(--grid-areas-mobile);
-    row-gap: 24px;
     height: min-content;
   }
 
   #gallery .thumbnail {
-    width: calc(20vh / 9 * 16);
     height: 20vh;
   }
 
+  #gallery #web.group .thumbnail {
+    height: min(20vh, calc((100vw - 24px - 24px) / 16 * 9));
+  }
+
   #gallery #mobile.group .thumbnail {
-    height: 60vh;
+    height: calc(20vh + 24px + 20vh);
+  }
+
+  #gallery #game.group .thumbnail,
+  #gallery #articles.group .thumbnail {
+    height: calc(20vh + 24px + 20vh);
   }
 }
