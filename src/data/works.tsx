@@ -1,4 +1,4 @@
-import { Project } from "../types/project.interface";
+import { Project } from "../types/works.interface";
 
 export const Labels = {
   website: "Open website",

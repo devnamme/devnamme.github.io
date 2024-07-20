@@ -1,5 +1,5 @@
 import { MouseEventHandler, useEffect, useState } from "react";
-import { Project } from "../../types/project.interface";
+import { Project } from "../../types/works.interface";
 import "./project-details.css";
 
 interface Props {

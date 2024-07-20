@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { WorksData, WorksDataGroups } from "../../data/works";
-import { WorksDataGroup } from "../../types/project.interface";
+import { WorksDataGroup } from "../../types/works.interface";
 import "./gallery.css";
 
 interface Props {
