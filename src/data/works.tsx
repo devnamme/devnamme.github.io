@@ -148,7 +148,8 @@ export const WorksData: { [key: string]: Project } = {
         url: "https://www.facebook.com/epimetricsph/",
       },
     ],
-    media: ["thumbnail.png"],
+    media: ["01.png", "02.png", "03.png", "04.png"],
+    thumbnail: "01.png",
     content: (
       <>
         <p>
