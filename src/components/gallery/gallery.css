@@ -28,7 +28,6 @@
 
 #gallery .thumbnail {
   width: calc(45vh / 9 * 16);
-  /* max-width: 200px; */
   height: 45vh;
 
   display: block;
@@ -36,11 +35,6 @@
   object-position: center;
 
   cursor: pointer;
-}
-
-#gallery #articles.group .thumbnail {
-  width: max-content;
-  max-width: 200px;
 }
 
 #gallery #mobile.group .thumbnail {
