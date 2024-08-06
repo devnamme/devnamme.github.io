@@ -13,7 +13,7 @@ export const ExperienceData: Experience[] = [
   {
     position: "Web Developer Intern",
     company: "Azeus Systems Philippines Limited",
-    company_url: "https://azeus.com",
+    company_url: "https://www.azeus.com",
     duration: {
       from: "June 2023",
       to: "August 2023",
