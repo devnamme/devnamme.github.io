@@ -211,7 +211,7 @@ export const WorksData: { [key: string]: Project } = {
       },
       {
         text: Labels.github,
-        url: "https://github.com/dnamme/math-10-integrating-project",
+        url: "https://github.com/devnamme/math-10-integrating-project",
       },
     ],
     media: ["thumbnail.jpg"],
@@ -275,7 +275,7 @@ export const WorksData: { [key: string]: Project } = {
     links: [
       {
         text: Labels.github,
-        url: "https://github.com/dnamme/race-to-twelve",
+        url: "https://github.com/devnamme/race-to-twelve",
       },
     ],
     media: ["thumbnail.png"],

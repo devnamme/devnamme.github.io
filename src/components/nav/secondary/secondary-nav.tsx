@@ -10,7 +10,7 @@ export default function SecondaryNav() {
       >
         LinkedIn
       </a>
-      <a href="https://github.com/dnamme" target="_blank" className="link">
+      <a href="https://github.com/devnamme" target="_blank" className="link">
         GitHub
       </a>
       <a href="mailto:contact@emmanevangelista.com" className="link">
