@@ -2,6 +2,15 @@ import { Experience } from "../types/experiences.interface";
 
 export const ExperienceData: Experience[] = [
   {
+    position: "Front-end Developer",
+    company: "Samsung R&D Institute Philippines",
+    company_url: "https://research.samsung.com/srph",
+    duration: {
+      from: "August 2024",
+      to: "November 2024",
+    },
+  },
+  {
     position: "Design Executive Editor",
     company: "The GUIDON",
     company_url: "https://theguidon.com",
