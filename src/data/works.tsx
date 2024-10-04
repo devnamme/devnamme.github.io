@@ -10,7 +10,9 @@ export const WorksDataGroups: {
   [key in WorksDataType]: string[];
 } = {
   web: [
+    "vini-basket",
     "the-guidon-archives",
+    "azure-dive-resort",
     "vantage-magazine",
     "the-guidon-interactive",
     "the-guidon",
@@ -57,6 +59,28 @@ export const WorksData: { [key: string]: Project } = {
   //     </>
   //   ),
   // },
+  "azure-dive-resort": {
+    title: "Azure Dive Resort",
+    tech: ["NextJS", "TypeScript", "TailwindCSS"],
+    media: ["01.png"],
+    thumbnail: "01.png",
+    content: (
+      <>
+        <p>
+          Azure Dive Resort is a local resort in the municipality of Dauin,
+          Negros Oriental. In late 2024, their website is being redesigned to
+          match modern UX/UI standards and to use more modern web frameworks as
+          the website was previously built using WordPress themes.
+        </p>
+        <p>
+          <i>
+            This project is a work in progress and is set to be released in
+            October 2024.
+          </i>
+        </p>
+      </>
+    ),
+  },
   beadle: {
     title: "Beadle: AdMU Student App",
     tech: ["Flutter", "Dart"],
@@ -509,6 +533,34 @@ export const WorksData: { [key: string]: Project } = {
         <p>
           Digital Primers are also being released every semester as animated,
           online counterparts of these physical primers.
+        </p>
+      </>
+    ),
+  },
+  "vini-basket": {
+    title: "VINI AAA Robo Advisor",
+    tech: ["OData", "Remix", "TypeScript", "TailwindCSS"],
+    links: [
+      {
+        text: "Open Client Website",
+        url: "https://robo.aaa-equities.com.ph",
+      },
+    ],
+    media: ["01.png", "02.png", "03.png", "04.png"],
+    thumbnail: "01.png",
+    content: (
+      <>
+        <p>
+          Set to be launched to the general public in late October 2024, VINI
+          AAA Robo Advisor lets clients automate portfolio investments through a
+          proprietary algorithm. VINI AAA Robo Advisor is done in partnership
+          with AAA Equities, a local stock brokerage in the Philippines.
+        </p>
+        <p>
+          <i>
+            This project is a work in progress and is set to be released in
+            October 2024.
+          </i>
         </p>
       </>
     ),
