@@ -2,6 +2,11 @@ import { Award } from "../types/awards.interface";
 
 export const AwardsData: Award[] = [
   {
+    title: "Samsung Software Competency Certification (Advanced Level)",
+    date: "September 2024 batch",
+    position: "Only 3 passers out of 43",
+  },
+  {
     title: "Google Developer Student Clubs Hackfest 2023",
     date: "April 2023",
     team: "5kea",
