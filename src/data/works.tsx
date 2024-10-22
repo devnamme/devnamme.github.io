@@ -25,10 +25,7 @@ export const WorksDataGroups: {
     "flood-guard-calbayog",
     "project-management",
   ],
-  mobile: [
-    "beadle",
-    //
-  ],
+  mobile: ["vini-basket-mobile", "beadle"],
   game: [
     "ma10mon-cs",
     "race-to-twelve",
@@ -538,11 +535,11 @@ export const WorksData: { [key: string]: Project } = {
     ),
   },
   "vini-basket": {
-    title: "VINI AAA Robo Advisor",
+    title: "AAA Robo Advisor",
     tech: ["OData", "Remix", "TypeScript", "TailwindCSS"],
     links: [
       {
-        text: "Open Client Website",
+        text: Labels.website,
         url: "https://robo.aaa-equities.com.ph",
       },
     ],
@@ -551,10 +548,38 @@ export const WorksData: { [key: string]: Project } = {
     content: (
       <>
         <p>
-          Set to be launched to the general public in late October 2024, VINI
-          AAA Robo Advisor lets clients automate portfolio investments through a
-          proprietary algorithm. VINI AAA Robo Advisor is done in partnership
-          with AAA Equities, a local stock brokerage in the Philippines.
+          Set to be launched to the general public in late October 2024, AAA
+          Robo Advisor lets clients automate portfolio investments through a
+          proprietary algorithm. AAA Robo Advisor is done in partnership with
+          AAA Equities, a local stock brokerage in the Philippines.
+        </p>
+        <p>
+          <i>
+            This project is a work in progress and is set to be released in
+            October 2024.
+          </i>
+        </p>
+      </>
+    ),
+  },
+  "vini-basket-mobile": {
+    title: "AAA Robo Advisor Mobile",
+    tech: ["OData", "Flutter", "Android", "iOS"],
+    links: [
+      {
+        text: Labels.website,
+        url: "https://robo.aaa-equities.com.ph",
+      },
+    ],
+    media: ["01.png"],
+    thumbnail: "01.png",
+    content: (
+      <>
+        <p>
+          Set to be launched to the general public in late October 2024, AAA
+          Robo Advisor lets clients automate portfolio investments through a
+          proprietary algorithm. AAA Robo Advisor is done in partnership with
+          AAA Equities, a local stock brokerage in the Philippines.
         </p>
         <p>
           <i>

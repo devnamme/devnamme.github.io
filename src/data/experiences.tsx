@@ -7,7 +7,6 @@ export const ExperienceData: Experience[] = [
     company_url: "https://research.samsung.com/srph",
     duration: {
       from: "August 2024",
-      to: "November 2024",
     },
   },
   {
