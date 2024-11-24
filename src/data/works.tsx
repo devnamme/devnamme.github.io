@@ -10,9 +10,9 @@ export const WorksDataGroups: {
   [key in WorksDataType]: string[];
 } = {
   web: [
+    "azure-dive-resort",
     "vini-basket",
     "the-guidon-archives",
-    "azure-dive-resort",
     "vantage-magazine",
     "the-guidon-interactive",
     "the-guidon",
@@ -59,7 +59,17 @@ export const WorksData: { [key: string]: Project } = {
   "azure-dive-resort": {
     title: "Azure Dive Resort",
     tech: ["NextJS", "TypeScript", "TailwindCSS"],
-    media: ["01.png"],
+    media: [
+      "01.png",
+      "02.png",
+      "03.png",
+      "04.png",
+      "05.png",
+      "06.png",
+      "07.png",
+      "08.png",
+      "09.png",
+    ],
     thumbnail: "01.png",
     content: (
       <>
@@ -70,10 +80,8 @@ export const WorksData: { [key: string]: Project } = {
           the website was previously built using WordPress themes.
         </p>
         <p>
-          <i>
-            This project is a work in progress and is set to be released in
-            October 2024.
-          </i>
+          The website was originally built using NextJS but was exported later
+          on to use as a custom WordPress theme.
         </p>
       </>
     ),
@@ -548,15 +556,15 @@ export const WorksData: { [key: string]: Project } = {
     content: (
       <>
         <p>
-          Set to be launched to the general public in late October 2024, AAA
-          Robo Advisor lets clients automate portfolio investments through a
+          Set to be launched to the general public in late 2024, AAA Robo
+          Advisor lets clients automate portfolio investments through a
           proprietary algorithm. AAA Robo Advisor is done in partnership with
           AAA Equities, a local stock brokerage in the Philippines.
         </p>
         <p>
           <i>
-            This project is a work in progress and is set to be released in
-            October 2024.
+            This project is a work in progress and is set to be released in late
+            2024.
           </i>
         </p>
       </>
@@ -583,8 +591,8 @@ export const WorksData: { [key: string]: Project } = {
         </p>
         <p>
           <i>
-            This project is a work in progress and is set to be released in
-            October 2024.
+            This project is a work in progress and is set to be released in late
+            2024.
           </i>
         </p>
       </>
