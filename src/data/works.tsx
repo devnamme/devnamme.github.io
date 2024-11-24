@@ -23,7 +23,7 @@ export const WorksDataGroups: {
     "uaap-85-digital-primer",
     // "a-house-divided",
     "flood-guard-calbayog",
-    "project-management",
+    // "project-management",
   ],
   mobile: ["vini-basket-mobile", "beadle"],
   game: [
@@ -36,26 +36,22 @@ export const WorksDataGroups: {
 };
 
 export const WorksData: { [key: string]: Project } = {
-  // "a-house-divided": {
-  //   title: "A House Divided",
-  //   tech: ["VueJS"],
-  //   links: [
-  //     {
-  //       text: Labels.website,
-  //       url: "https://interactive.theguidon.com/2022/10/a-house-divided/",
-  //     },
-  //     {
-  //       text: Labels.github,
-  //       url: "https://github.com/theguidon/a-house-divided",
-  //     },
-  //   ],
-  //   media: ["thumbnail.png"],
-  //   content: (
-  //     <>
-  //       <p>Hello world</p>
-  //     </>
-  //   ),
-  // },
+  "a-house-divided": {
+    title: "A House Divided",
+    tech: ["VueJS"],
+    links: [
+      {
+        text: Labels.website,
+        url: "https://interactive.theguidon.com/2022/10/a-house-divided/",
+      },
+      {
+        text: Labels.github,
+        url: "https://github.com/theguidon/a-house-divided",
+      },
+    ],
+    media: ["thumbnail.png"],
+    content: <></>,
+  },
   "azure-dive-resort": {
     title: "Azure Dive Resort",
     tech: ["NextJS", "TypeScript", "TailwindCSS"],
@@ -584,8 +580,8 @@ export const WorksData: { [key: string]: Project } = {
     content: (
       <>
         <p>
-          Set to be launched to the general public in late October 2024, AAA
-          Robo Advisor lets clients automate portfolio investments through a
+          Set to be launched to the general public in late 2024, AAA Robo
+          Advisor lets clients automate portfolio investments through a
           proprietary algorithm. AAA Robo Advisor is done in partnership with
           AAA Equities, a local stock brokerage in the Philippines.
         </p>
