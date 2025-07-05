@@ -2,6 +2,11 @@ import { Award } from "../types/awards.interface";
 
 export const AwardsData: Award[] = [
   {
+    title: "Samsung Software Competency Certification (Professional Level)",
+    date: "April 2025",
+    position: "In the first 100 passers",
+  },
+  {
     title: "Samsung Software Competency Certification (Advanced Level)",
     date: "September 2024 batch",
     position: "Only 3 passers out of 43",

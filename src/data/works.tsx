@@ -11,18 +11,19 @@ export const WorksDataGroups: {
 } = {
   web: [
     "azure-dive-resort",
+    "optellum",
     "vini-basket",
     "the-guidon-archives",
     "vantage-magazine",
     "the-guidon-interactive",
     "the-guidon",
-    "talab-2023",
-    "epimetrics",
     "dead-end",
     "year-end-gallery-2023",
     "uaap-85-digital-primer",
+    "epimetrics",
+    "talab-2023",
     // "a-house-divided",
-    "flood-guard-calbayog",
+    // "flood-guard-calbayog",
     // "project-management",
   ],
   mobile: ["vini-basket-mobile", "beadle"],
@@ -222,6 +223,27 @@ export const WorksData: { [key: string]: Project } = {
           I was outsourced as a freelance developer by Cloudband Solutions in
           order to create this project for the Local Government Unit (LGU) of
           Calbayog, Samar in the Philippines.
+        </p>
+      </>
+    ),
+  },
+  optellum: {
+    title: "Optellum",
+    tech: ["WordPress", "JavaScript", "CSS", "Bricks"],
+    links: [
+      {
+        text: Labels.website,
+        url: "https://optellum.com",
+      },
+    ],
+    media: ["01.png", "02.png", "03.png", "04.png", "05.png", "06.png"],
+    thumbnail: "01.png",
+    content: (
+      <>
+        <p>
+          Optellum is a health technology company that utilizes artificial
+          intelligence to assist physicians in detecting lung cancer nodules
+          early.
         </p>
       </>
     ),
@@ -557,12 +579,6 @@ export const WorksData: { [key: string]: Project } = {
           proprietary algorithm. AAA Robo Advisor is done in partnership with
           AAA Equities, a local stock brokerage in the Philippines.
         </p>
-        <p>
-          <i>
-            This project is a work in progress and is set to be released in late
-            2024.
-          </i>
-        </p>
       </>
     ),
   },
@@ -587,8 +603,8 @@ export const WorksData: { [key: string]: Project } = {
         </p>
         <p>
           <i>
-            This project is a work in progress and is set to be released in late
-            2024.
+            This project was a work in progress and was set to be released in
+            late 2024.
           </i>
         </p>
       </>
