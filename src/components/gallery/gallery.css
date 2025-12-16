@@ -56,6 +56,17 @@
   column-gap: 64px;
 }
 
+#gallery #experiences.group .exp-container *,
+#gallery #awards.group .award-container * {
+  transition: color 0.3s;
+}
+
+#gallery #experiences.group .exp-container:hover *,
+#gallery #awards.group .award-container:hover * {
+  color: #1399ff;
+  /* color: #048fe6; */
+}
+
 #gallery .exp-container,
 #gallery .award-container {
   width: 500px;

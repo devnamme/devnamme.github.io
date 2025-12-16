@@ -10,6 +10,7 @@ export const WorksDataGroups: {
   [key in WorksDataType]: string[];
 } = {
   web: [
+    "novellino",
     "azure-dive-resort",
     "optellum",
     "vini-basket",
@@ -281,6 +282,23 @@ export const WorksData: { [key: string]: Project } = {
           An extensive amount of JavaScript knowledge was required in order to
           figure out which scenes and which frames to draw.
         </p>
+      </>
+    ),
+  },
+  novellino: {
+    title: "Novellino",
+    tech: ["WordPress", "PHP", "HTML", "CSS", "Gmail API"],
+    links: [
+      {
+        text: Labels.website,
+        url: "https://novellino.com",
+      },
+    ],
+    media: ["thumbnail.png", "02.png", "03.png", "04.png", "05.png"],
+    thumbnail: "thumbnail.png",
+    content: (
+      <>
+        <p>Novellino is one of the leading wine brands in the Philippines.</p>
       </>
     ),
   },
